@@ -1,1 +1,8 @@
 <h1>Welcome to your costumes</h1>
+
+<ul>
+<% @costumes.each do |costume| %>
+  <% p costume %>
+  <li><%= costume.title %> <img src="<%= costume.image_url%>" alt="<%= costume.title %>"></li>
+<% end %>
+</ul>
