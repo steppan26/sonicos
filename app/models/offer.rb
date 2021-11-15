@@ -1,5 +1,5 @@
 class Offer < ApplicationRecord
-  STATUS = ['pending', 'accepted', 'rejected']
+  OFFER_STATUS = ['pending', 'accepted', 'rejected']
 
   belongs_to :user
   belongs_to :costume
