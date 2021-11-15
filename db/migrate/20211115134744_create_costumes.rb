@@ -5,7 +5,7 @@ class CreateCostumes < ActiveRecord::Migration[6.1]
       t.references :user, null: false, foreign_key: true
       t.text :description
       t.string :image_url
-      t.decimal :price
+      t.float :price
       t.string :location
 
       t.timestamps

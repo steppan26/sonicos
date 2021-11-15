@@ -4,4 +4,5 @@ class Costume < ApplicationRecord
 
   validates :title, :image_url, :price, :location, presence: true
   validates :title, length: { minimum: 5, maximum: 60 }
+  validates :price, numericality: true
 end
