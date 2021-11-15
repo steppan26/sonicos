@@ -14,7 +14,7 @@ export default class extends Controller {
       if (section.id === pageName){
         section.classList.remove('hidden');
       } else {
-        section.classList.add('hidden');
+        section.classList.add(  'hidden');
       }
     })
   }
