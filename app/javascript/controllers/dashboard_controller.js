@@ -11,7 +11,6 @@ export default class extends Controller {
     const pageName = event.currentTarget.dataset.pageName;
     const sections = document.querySelectorAll('.section')
     sections.forEach(section => {
-      console.log(section.id, pageName)
       if (section.id === pageName){
         section.classList.remove('hidden');
       } else {
