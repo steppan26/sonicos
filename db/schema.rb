@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_134940) do
     t.bigint "user_id", null: false
     t.text "description"
     t.string "image_url"
-    t.decimal "price"
+    t.float "price"
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
