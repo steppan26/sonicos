@@ -9,8 +9,7 @@ export default class extends Controller {
 
   toggle(event) {
     const pageName = event.currentTarget.dataset.pageName;
-    const sections = document.querySelectorAll('.section')
-    sections.forEach(section => {
+    this.sectionTargets.forEach(section => {
       if (section.id === pageName){
         section.classList.remove('hidden');
       } else {
