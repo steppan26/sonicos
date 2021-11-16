@@ -6,7 +6,7 @@
   border-radius: 0.5em;
   background-color: $clr-bakground-primary;
   overflow: hidden;
-  box-shadow: 0px 2px 30px 3px rgba(19, 104, 208, 0.1);
+  box-shadow: 0px 2px 20px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.05);
   transition: box-shadow 160ms ease-in;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .card-custom:hover {
-  box-shadow: 0px 2px 30px 3px rgba(19, 104, 208, 0.3);
+  box-shadow: 0px 2px 2 0px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.23);
 }
 
 .card-custom .card-subtitle {
