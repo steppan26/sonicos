@@ -1,0 +1,14 @@
+<div class="container" data-controller="dashboard">
+  <h1>Pages#home</h1>
+  <p>Welcome home!!</p>
+  <div class="buttons-wrapper">
+    <div class="btn btn-outline-primary m-2 d-inline-block" data-action="click->dashboard#toggle" data-page-name="homepage">Home</div>
+    <div class="btn btn-outline-primary m-2 d-inline-block" data-action="click->dashboard#toggle" data-page-name="search">Search a Sonic</div>
+    <div class="btn btn-outline-primary m-2 d-inline-block" data-action="click->dashboard#toggle" data-page-name="new">New Sonic</div>
+  </div>
+  <div class="container" data-dashboard-target="wrapper">
+      <%= render 'homepage' %>
+      <%= render 'search-costume' %>
+      <%= render 'new-costume' %>
+  </div>
+</div>
