@@ -1,21 +1,23 @@
 class CostumesController < ApplicationController
-
   def index
     @costumes = policy_scope(Costume)
   end
 
   def new
     @costume = Costume.new
+    authorize @costume
   end
 
   def show
     @costume = Costume.find(params[:id])
+    authorize @costume
   end
 
   def create
     @costume = Costume.new(costume_params)
     @user = current_user
     @costume.user_id = current_user.id
+    authorize @costume
     @costume.save
 
     redirect_to costume_path(@costume)

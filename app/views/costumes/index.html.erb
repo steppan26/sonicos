@@ -8,8 +8,12 @@
     <li>
       <%= link_to costume.title, "/costumes/#{costume.id}" %>
       <img src="<%= costume.image_url%>" alt="<%= costume.title %>">
-      <%= link_to 'Edit', "/costumes/#{costume.id}/edit" %>
-      <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% if policy(Costume).edit? %>
+        <%= link_to 'Edit', "/costumes/#{costume.id}/edit" %>
+      <% end %>
+      <% if policy(Costume).edit? %>
+        <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
     </li>
   <% end %>
 </ul>
