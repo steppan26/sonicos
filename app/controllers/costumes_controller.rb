@@ -1,7 +1,11 @@
 class CostumesController < ApplicationController
 
   def index
-    @costumes = Costume.all
+    @costumes = policy_scope(Costume)
+  end
+
+  def new
+    @costume = Costume.new
   end
 
   def show
