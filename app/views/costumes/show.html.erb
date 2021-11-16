@@ -1,4 +1,9 @@
 <h1><%= @costume.title %></h1>
-<img src="<%= @costume.image_url%>" alt="<% @costume.title %>">
-
+<% if @costume.photos.attached? %>
+  <% @costume.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% else %>
+  <img src="<%= @costume.image_url%>" alt="<% @costume.title %>">
+<% end %>
 <%= link_to "Back", "/costumes" %>
