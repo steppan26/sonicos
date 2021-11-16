@@ -8,7 +8,7 @@ User.destroy_all
 
 p User.all
 
-url = 'https://www.google.com/search?q=best%20sonic%20costume&tbm=isch&tbs=isz:l&hl=en&sa=X&ved=0CAIQpwVqFwoTCKC5vufcmvQCFQAAAAAdAAAAABAD&biw=1440&bih=790'
+url = 'https://www.google.com/search?q=sonic%20cosplay&tbm=isch&tbs=isz:l&client=safari&hl=en&sa=X&ved=0CAIQpwVqFwoTCMC0nuz1nPQCFQAAAAAdAAAAABAD&biw=1440&bih=795#imgrc=n2ELREW7tNJkTM'
 
 html_file = URI.open(url).read
 html_doc = Nokogiri::HTML(html_file)
