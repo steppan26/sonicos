@@ -8,9 +8,9 @@
     <li>
       <%= link_to costume.title, "/costumes/#{costume.id}" %>
       <% if costume.photos.attached? %>
-          <%= cl_image_tag costume.photos.first.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag costume.photos.first.key, height: 300, width: 400, crop: :fill %>
       <% else %>
-      <img src="<%= costume.image_url%>" alt="<% costume.title %>">
+        <img src="<%= costume.image_url%>" alt="<% costume.title %>">
       <% end %>
       <% if policy(costume).edit? %>
         <%= link_to 'Update', "/costumes/#{costume.id}/edit" %>

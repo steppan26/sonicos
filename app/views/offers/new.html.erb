@@ -1,13 +1,7 @@
 <%= form_for(@offer) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+  <%= f.label :date_of_hire %>
+  <%= f.date_field :date_of_hire %>
+  <%= f.label :duration %>
+  <%= f.number_field :duration %>
   <%= f.submit %>
 <% end %>
