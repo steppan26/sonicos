@@ -1,9 +1,40 @@
-<h1><%= @costume.title %></h1>
-<% if @costume.photos.attached? %>
-  <% @costume.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container">
+  <h1><%= @costume.title %></h1>
+  <% if @costume.photos.attached? %>
+    <div class="d-flex p-2 m-2">
+      <div>
+        <%= cl_image_tag @costume.photos.first.key, height: 350, width: 450, crop: :fill %>
+      </div>
+      <div class="row m-3">
+          <% @costume.photos.each do |photo| %>
+            <div class="col-6">
+              <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  <% else %>
+    <img src="<%= @costume.image_url%>" alt="<% @costume.title %>">
   <% end %>
-<% else %>
-  <img src="<%= @costume.image_url%>" alt="<% @costume.title %>">
-<% end %>
-<%= link_to "Back", "/costumes" %>
+
+  <h2>Description</h2>
+  <p><%= @costume.description %></p>
+
+  <h2>Availibility</h2>
+  <p>This costume is available at <strong><%= @costume.location %></strong> for the modic sum of <strong><%= @costume.price %></strong>€</p>
+
+  <h3>Owner</h3>
+  <p>This beautifull costume is brought to you by <strong><%= @costume.user.username.capitalize %></strong>.
+  <br>
+  To contact this person of great taste, try sending them a mail at : <span style="color:blue"><u><strong><%= @costume.user.email %></strong></u></span>!
+  </p>
+
+  <% if @user = @costume.user %>
+    <%= render "new_edit" ,costume: @costume%>
+  <% else %>
+    <%= render "/offers/new.html.erb" %>
+  <% end %>
+
+
+  <%= link_to "Back", "/costumes" %>
+</div>
