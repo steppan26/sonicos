@@ -1,0 +1,24 @@
+<div class="container" data-controller="dashboard">
+  <h1>Pages#home</h1>
+  <p>Welcome home!!</p>
+  <div class="buttons-wrapper">
+    <div class="btn-yellow" data-action="click->dashboard#toggle" data-page-name="homepage">Home</div>
+    <div class="btn-search m-2-block" data-action="click->dashboard#toggle" data-page-name="search">Search a Sonic</div>
+    <div class="btn btn-outline-primary m-2 d-inline-block" data-action="click->dashboard#toggle" data-page-name="new">New Sonic</div>
+  </div>
+  <div class="container" data-dashboard-target="wrapper">
+      <%= render 'homepage' %>
+      <%= render 'search-costume' %>
+      <%= render 'new-costume' %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+   <%= form_with url: "/search", method: :get, html: { class: 'd-flex m-2 col' } do |form| %>
+    <%= form.text_field :address, placeholder: "Address", class:"bg-light border border-primary rounded form-control p-2 m-2 col" %>
+    <%= form.date_field :date, placeholder: "When ?", class:"bg-light border border-primary rounded form-control p-2 m-2 col" %>
+    <%= form.submit "Sonic Me !", class:"btn btn-primary text-white p-2 m-2 rounded col"%>
+  <% end %>
+  </div>
+</div>
