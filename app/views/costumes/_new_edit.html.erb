@@ -1,5 +1,6 @@
-<div class="container">
-  <%= simple_form_for @costume do |f| %>
+<div class="border">
+<h3>Edit your costume</h3>
+  <%= simple_form_for costume do |f| %>
     <%= f.input :title %>
     <%= f.input :price %>
     <%= f.input :description %>
@@ -7,6 +8,4 @@
     <%= f.input :location %>
     <%= f.submit "Go Faster" %>
   <% end %>
-  <br>
-  <%= link_to "Back", "/costumes" %>
 </div>

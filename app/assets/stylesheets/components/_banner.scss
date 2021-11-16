@@ -1,5 +1,6 @@
 .landing-wrap {
-  background-image: url('landing-background');
+  background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.1)),
+  url('landing-background');
   position: fixed;
   top: 0;
   background-repeat: no-repeat;
@@ -18,6 +19,11 @@
 .landing-titles {
   color: white;
   display: block;
+}
+
+.landing-titles > h1,
+.landing-titles > h5 {
+  text-shadow: 0 0 10px rgba(10, 10, 10, 0.1);
 }
 
 .h1 {
