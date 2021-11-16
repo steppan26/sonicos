@@ -2,7 +2,7 @@
   <h3 class="my-3">My Sonics</h3>
   <ul class="display-cards">
   <% if @myCostumes.empty? %>
-    <li>You do not currently own any Sonics</li>
+    <li>You do not currently own any Sonics to see</li>
   <% else %>
     <% @myCostumes.each do |costume| %>
       <li><%= render '/costumes/card', costume: costume %></li>
