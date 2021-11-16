@@ -1,0 +1,12 @@
+<div class="card-custom m-4">
+  <% if costume.photos.attached?%>
+    <%= cl_image_tag costume.photos.first.key, crop: :fill %>
+  <% else %>
+    <%= image_tag costume.image_url, class: "card-img", crop: :fill %>
+  <% end %>
+    <div class="card-body">
+      <h3 class="card-title"><%= costume.title %></h3>
+      <h6 class="card-subtitle my-3"><%= costume.price %>€ / day</h4>
+      <p class="card-text"><%= costume.description %></p>
+    </div>
+</div>

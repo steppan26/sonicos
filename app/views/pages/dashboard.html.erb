@@ -1,14 +1,14 @@
 <div class="container" data-controller="dashboard">
-  <h1>Pages#home</h1>
-  <p>Welcome home!!</p>
-  <div class="buttons-wrapper">
-    <div class="btn btn-outline-primary m-2 d-inline-block" data-action="click->dashboard#toggle" data-page-name="homepage">Home</div>
-    <div class="btn btn-outline-primary m-2 d-inline-block" data-action="click->dashboard#toggle" data-page-name="search">Search a Sonic</div>
-    <div class="btn btn-outline-primary m-2 d-inline-block" data-action="click->dashboard#toggle" data-page-name="new">New Sonic</div>
+  <h1>Dashboard</h1>
+  <p>Welcome home <%= current_user.username %>!!</p>
+  <div class="dashboard-tabs">
+    <div class="tab active" data-action="click->dashboard#toggle" data-page-name="homepage">My Sonics</div>
+    <div class="tab" data-action="click->dashboard#toggle" data-page-name="search">Find a Sonic</div>
+    <div class="tab" data-action="click->dashboard#toggle" data-page-name="new">Create a Sonic</div>
   </div>
-  <div class="container" data-dashboard-target="wrapper">
+  <div class="dashboard-wrapper container" data-dashboard-target="dashboard-wrapper">
       <%= render 'homepage' %>
       <%= render 'search-costume' %>
-      <%= render 'new-costume' %>
+      <%= render 'new-costume', costume: @costume %>
   </div>
 </div>

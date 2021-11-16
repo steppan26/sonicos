@@ -1,0 +1,23 @@
+.card-custom {
+  color: $clr-text-primary;
+  max-width: 300px;
+  width: 250px;
+  height: 450px;
+  border-radius: 0.5em;
+  background-color: $clr-bakground-primary;
+  overflow: hidden;
+  box-shadow: 0px 2px 20px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.05);
+  transition: box-shadow 160ms ease-in;
+}
+
+.card-custom > img {
+  height: 250px;
+}
+
+.card-custom:hover {
+  box-shadow: 0px 2px 2 0px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.23);
+}
+
+.card-custom .card-subtitle {
+    color: $clr-text-secondary;
+}

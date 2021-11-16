@@ -10,4 +10,14 @@
       </h5>
     </div>
   </div>
+  <h3 class="my-3">My Sonics</h3>
+  <ul class="display-cards">
+  <% if @myCostumes.empty? %>
+    <li>You do not currently own any Sonics</li>
+  <% else %>
+    <% @myCostumes.each do |costume| %>
+      <li><%= render '/costumes/card', costume: costume %></li>
+    <% end %>
+  <% end %>
+  </ul>
 </div>
