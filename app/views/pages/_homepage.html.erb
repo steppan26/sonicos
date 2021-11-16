@@ -1,19 +1,12 @@
 <div id="homepage" class="mt-3" data-dashboard-target="section">
-  <h3 class="my-3">HOME</h3>
-  <h5 class="text-muted">Welcome to your dashboard</h5>
+  <h3 class="my-3">My Sonics</h3>
   <ul class="display-cards">
-    <% @costumes.each do |costume| %>
+  <% if @myCostumes.empty? %>
+    <li>You do not currently own any Sonics</li>
+  <% else %>
+    <% @myCostumes.each do |costume| %>
       <li><%= render '/costumes/card', costume: costume %></li>
     <% end %>
+  <% end %>
   </ul>
-
-  <%# <div class="card">
-    <img src="" alt="" class="card-img">
-    <div class="card-body">
-      <h5 class="card-title">My first Sonic
-        <h6 class="text-muted card-subtitle mb-5">79€ / Night</h6>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex debitis ullam consectetur aliquam consequuntur incidunt. Aut delectus doloribus quis fugit, unde nemo. Necessitatibus temporibus harum voluptatum maiores? Quisquam, dolor facilis.</p>
-      </h5>
-    </div>
-  </div> %>
 </div>
