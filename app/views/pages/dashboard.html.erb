@@ -1,6 +1,5 @@
 <div class="container" data-controller="dashboard">
-  <h1>Dashboard</h1>
-  <p>Welcome home <%= current_user.username %>!!</p>
+  <h2 class="my-4">Welcome home <%= current_user.username.capitalize %>!!</h2>
   <div class="dashboard-tabs">
     <div class="tab active" data-action="click->dashboard#toggle" data-page-name="homepage">My Sonics</div>
     <div class="tab" data-action="click->dashboard#toggle" data-page-name="search">Find a Sonic</div>
