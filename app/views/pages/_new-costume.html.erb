@@ -1,7 +1,16 @@
-<div id="new" class="mt-3 hidden" data-dashboard-target="section">
+<div id="new" class="mt-3 hidden pb-5" data-dashboard-target="section">
   <h3 class="my-5">Create a new Sonic</h3>
 
-<form>
+<%= simple_form_for costume do |f| %>
+  <%= f.input :title %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :image_url %>
+  <%= f.input :location %>
+  <%= f.submit "Go Faster" %>
+<% end %>
+
+<%# <form>
   <fieldset disabled>
     <legend>Disabled fieldset example</legend>
     <div class="mb-3">
@@ -24,5 +33,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
-</form>
+</form> %>
 </div>
