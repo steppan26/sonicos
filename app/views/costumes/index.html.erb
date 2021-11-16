@@ -1,19 +1,3 @@
-<h1>Welcome to your costumes</h1>
+<h1>Search for a Sonic</h1>
 
-<%= link_to 'New Sonic', "/costumes/new" %>
-
-<ul>
-  <% @costumes.each do |costume| %>
-    <% p costume %>
-    <li>
-      <%= link_to costume.title, "/costumes/#{costume.id}" %>
-      <img src="<%= costume.image_url%>" alt="<%= costume.title %>">
-      <% if policy(costume).edit? %>
-        <%= link_to 'Update', "/costumes/#{costume.id}/edit" %>
-      <% end %>
-      <% if policy(costume).destroy? %>
-        <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<%= render 'search-costumes', costumes: @costumes %>
