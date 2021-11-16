@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @costume = New.costume
   end
 end
