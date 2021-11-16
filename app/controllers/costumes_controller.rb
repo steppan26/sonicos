@@ -1,4 +1,6 @@
 class CostumesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @costumes = policy_scope(Costume)
   end
@@ -10,6 +12,7 @@ class CostumesController < ApplicationController
 
   def show
     @costume = Costume.find(params[:id])
+    @user = current_user
     authorize @costume
   end
 
@@ -47,6 +50,6 @@ class CostumesController < ApplicationController
   private
 
   def costume_params
-    params.require(:costume).permit(:title, :description, :image_url, :price, :location, photos: [])
+    params.require(:costume).permit(:title, :description, :price, :location, photos: [])
   end
 end

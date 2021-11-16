@@ -1,0 +1,11 @@
+<div class="border">
+<h3>Edit your costume</h3>
+  <%= simple_form_for costume do |f| %>
+    <%= f.input :title %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :location %>
+    <%= f.submit "Go Faster" %>
+  <% end %>
+</div>

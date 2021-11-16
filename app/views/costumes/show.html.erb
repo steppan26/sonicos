@@ -16,5 +16,25 @@
   <% else %>
     <img src="<%= @costume.image_url%>" alt="<% @costume.title %>">
   <% end %>
+
+  <h2>Description</h2>
+  <p><%= @costume.description %></p>
+
+  <h2>Availibility</h2>
+  <p>This costume is available at <strong><%= @costume.location %></strong> for the modic sum of <strong><%= @costume.price %></strong>€</p>
+
+  <h3>Owner</h3>
+  <p>This beautifull costume is brought to you by <strong><%= @costume.user.username.capitalize %></strong>.
+  <br>
+  To contact this person of great taste, try sending them a mail at : <span style="color:blue"><u><strong><%= @costume.user.email %></strong></u></span>!
+  </p>
+
+  <% if @user = @costume.user %>
+    <%= render "new_edit" ,costume: @costume%>
+  <% else %>
+    <%= render "/offers/new.html.erb" %>
+  <% end %>
+
+
   <%= link_to "Back", "/costumes" %>
 </div>

@@ -1,0 +1,27 @@
+.landing-wrap {
+  background-image: url('landing-background');
+  position: fixed;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+}
+
+.landing-content {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.landing-titles {
+  color: white;
+  display: block;
+}
+
+.h1 {
+  text-transform: uppercase;
+  text-justify: auto;
+  font-weight: bolder;
+}
