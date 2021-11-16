@@ -1,11 +1,15 @@
 class OffersController < ApplicationController
 
   def index
-    raise
+    @offers = Offer.select { |offer| offer.user == current_user }
   end
 
   def show
     raise
+  end
+
+  def new
+    @offer = Offer.new
   end
 
   def create
