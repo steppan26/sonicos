@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @costumes = Costume.all
+    @myCostumes = Costume.where(user: current_user)
     @costume = Costume.new
   end
 end
