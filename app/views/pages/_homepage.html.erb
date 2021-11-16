@@ -1,7 +1,13 @@
 <div id="homepage" class="mt-3" data-dashboard-target="section">
   <h3 class="my-3">HOME</h3>
   <h5 class="text-muted">Welcome to your dashboard</h5>
-  <div class="card">
+  <ul class="display-cards">
+    <% @costumes.each do |costume| %>
+      <li><%= render '/costumes/card', costume: costume %></li>
+    <% end %>
+  </ul>
+
+  <%# <div class="card">
     <img src="" alt="" class="card-img">
     <div class="card-body">
       <h5 class="card-title">My first Sonic
@@ -9,5 +15,5 @@
         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex debitis ullam consectetur aliquam consequuntur incidunt. Aut delectus doloribus quis fugit, unde nemo. Necessitatibus temporibus harum voluptatum maiores? Quisquam, dolor facilis.</p>
       </h5>
     </div>
-  </div>
+  </div> %>
 </div>
