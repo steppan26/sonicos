@@ -1,10 +1,10 @@
 <div id="homepage" class="mt-3" data-dashboard-target="section">
   <h3 class="my-3">My Sonics</h3>
   <ul class="display-cards">
-    <% if @myCostumes.empty? %>
+    <% if @my_costumes.empty? %>
       <li>You do not currently own any Sonics to see</li>
     <% else %>
-      <% @myCostumes.each do |costume| %>
+      <% @my_costumes.each do |costume| %>
         <li class="card-custom">
           <%= render '/costumes/card', costume: costume %>
           <% if policy(costume).edit? %>
