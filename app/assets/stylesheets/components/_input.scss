@@ -1,0 +1,35 @@
+.custom-input {
+  display: inline-flex;
+  border: 1px solid $clr-bakground-primary-accent;
+  background-color: $clr-bakground-primary;
+  border-radius: 0.5em;
+  width: 282px;
+  height: 60px;
+  left: 10px;
+  top: 10px;
+}
+
+.block {
+  color: $clr-bakground-primary-accent;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-input input,
+.custom-input input:focus {
+  padding: 1em;
+  appearance: none;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+.txt-section {
+  padding-top: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: inline;
+}
