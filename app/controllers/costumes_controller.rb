@@ -25,13 +25,13 @@ class CostumesController < ApplicationController
 
   def edit
     @costume = Costume.find(params[:id])
-    authorize @restaurant
+    authorize @costume
   end
 
   def update
     @costume = Costume.find(params[:id])
     @costume.update(costume_params)
-    authorize @restaurant
+    authorize @costume
 
     redirect_to costume_path(@costume)
   end
@@ -39,7 +39,7 @@ class CostumesController < ApplicationController
   def destroy
     @costume = Costume.find(params[:id])
     @costume.destroy
-    authorize @restaurant
+    authorize @costume
 
     redirect_to costumes_path
   end
