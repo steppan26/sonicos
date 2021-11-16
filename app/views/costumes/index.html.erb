@@ -3,6 +3,6 @@
 <ul>
   <% @costumes.each do |costume| %>
     <% p costume %>
-    <li><%= costume.title %> <img src="<%= costume.image_url%>" alt="<%= costume.title %>"></li>
+    <li><%= link_to costume.title, "/costumes/#{costume.id}" %> <img src="<%= costume.image_url%>" alt="<%= costume.title %>"></li>
   <% end %>
 </ul>

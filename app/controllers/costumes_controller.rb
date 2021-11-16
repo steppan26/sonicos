@@ -13,7 +13,12 @@ class CostumesController < ApplicationController
   end
 
   def create
-    raise
+    @costume = Costume.new(costume_params)
+    @user = current_user
+    @costume.user_id = current_user.id
+    @costume.save
+
+    redirect_to costume_path(@costume)
   end
 
   def update
@@ -22,5 +27,11 @@ class CostumesController < ApplicationController
 
   def destroy
     raise
+  end
+
+  private
+
+  def costume_params
+    params.require(:costume).permit(:title, :description, :image_url, :price, :location)
   end
 end

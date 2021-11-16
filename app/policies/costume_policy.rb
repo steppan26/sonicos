@@ -10,6 +10,6 @@ class CostumePolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    return true
   end
 end
