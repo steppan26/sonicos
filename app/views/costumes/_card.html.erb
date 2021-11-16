@@ -1,4 +1,9 @@
 <div class="card-custom m-4">
+  <% if costume.photos.attached? %>
+    <%= cl_image_tag costume.photos.first.key, height: 300, width: 400, crop: :fill class="card-img" %>
+  <% else %>
+    <img src="<%= costume.image_url%>" alt="<% costume.title %>" class="card-img">
+  <% end %>
   <%= image_tag costume.image_url, class: "card-img", crop: :fill %>
   <div class="card-body">
     <h3 class="card-title"><%= costume.title %></h3>
