@@ -1,7 +1,7 @@
 .card-custom {
   color: $clr-text-primary;
   max-width: 300px;
-  width: 250px;
+  width: 300px;
   height: 450px;
   border-radius: 0.5em;
   background-color: $clr-bakground-primary;
@@ -16,12 +16,13 @@
   box-shadow: 0px 2px 20px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.3);
 }
 
-.img-wrapper > img {
-  height: 250px;
-}
-
 .img-wrapper {
   position: relative;
+  border-bottom: 1px solid rgba($color: $clr-text-secondary, $alpha: 0.6);
+}
+
+.img-wrapper > img {
+  height: 250px;
 }
 
 .costume-title {
@@ -46,6 +47,6 @@
   margin-bottom: 0.5em;
 }
 
-.card {
-  text-decoration: none;
+.costume-status {
+  color: rgb(14, 199, 14);
 }
