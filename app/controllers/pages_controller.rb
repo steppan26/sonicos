@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @active_tab = params[:page] || "homepage"
     @my_costumes = Costume.where(user: current_user)
     @costumes = Costume.all
     @costume = Costume.new
