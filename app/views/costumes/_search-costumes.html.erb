@@ -5,6 +5,8 @@
         <%= render '/costumes/card', costume: costume %>
         <% if policy(costume).edit? %>
           <%= link_to 'Update', "/costumes/#{costume.id}/edit" %>
+        <% else %>
+          <%= link_to "Make an offer he can't refuse", "/costumes/#{costume.id}/offers/new" %>
         <% end %>
         <% if policy(costume).destroy? %>
           <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %>
