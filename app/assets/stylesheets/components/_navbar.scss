@@ -1,4 +1,7 @@
 .navbar-lewagon {
+  position: fixed;
+  top: 0;
+  width: 100vw;
   justify-content: space-between;
   background-color: $clr-bakground-secondary;
   z-index: 999;
