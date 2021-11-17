@@ -1,20 +1,11 @@
 <div class="container">
-  <div class="d-flex flex-row-reverse mt-3">
+  <div class="d-flex flex-row-reverse">
     <button class="filter-btn p-2">Availibility</button>
     <button class="filter-btn p-2">By price</button>
     <button class="filter-btn p-2">Filter</button>
-      <h5 class="index-titles mr-6">Classement par ordre de pertinence</h5>
-    </div>
-    <div class="row">
-      <%= form_with url: "/costumes", method: :get, html: { class: 'd-flex col' } do |form| %>
-        <%= form.text_field :address, placeholder: "Address", class:"searchbar bg-light border-primary form-control m-2" %>
-        <%= form.date_field :date, placeholder: "When ?", class:"searchbar bg-light  border-primary form-control m-2" %>
-        <%= button_tag type:"submit", class: "btn btn-search text-white m-2" do %>
-          <i class="fas fa-search pe-3"></i>Sonic Me !
-        <% end %>
-      <% end %>
-    </div>
+  </div>
+      <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE <%=  %></h5>
+    
     <%= render "map" ,markers: @markers %>
     <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
-  </div>
 </div>
