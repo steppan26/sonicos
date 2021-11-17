@@ -1,2 +1,5 @@
-<h1>Search for a Sonic</h1>
-<%= render 'search-costumes', costumes: @costumes %>
+<div class="container">
+  <h1>Search for a Sonic</h1>
+  <%= render "map" ,markers: @markers%>
+  <%= render 'search-costumes', costumes: @costumes %>
+</div>
