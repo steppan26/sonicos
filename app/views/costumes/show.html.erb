@@ -29,10 +29,12 @@
   To contact this person of great taste, try sending them a mail at : <span style="color:blue"><u><strong><%= @costume.user.email %></strong></u></span>!
   </p>
 
-  <% if @user = @costume.user %>
+  <% if policy(costume).edit? %>
     <%= render "new_edit" ,costume: @costume%>
-  <% else %>
-    <%= render "/offers/new.html.erb" %>
+  <% elsif @costume.offers.include?()  %>
+    <p>You have put an offer on this costume !</p>
+  <% else%>
+    <%= render "/offers/new.html.erb", costume: @costume, offer: @offer %>
   <% end %>
 
 
