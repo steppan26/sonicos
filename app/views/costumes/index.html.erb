@@ -1,8 +1,10 @@
 
 <div class="container">
-  <div class="index-titles">
-        <h1>Search a Sonic</h1>
-        <h5>in your area</h5>
+  <div class="d-flex flex-row-reverse mt-3">
+    <button class="filter-btn p-2">Availibility</button>
+    <button class="filter-btn p-2">By price</button>
+    <button class="filter-btn p-2">Filter</button>
+        <h5 class="index-titles mr-6">Classement par ordre de pertinence</h5>
   </div>
       <div class="row">
         <%= form_with url: "/costumes", method: :get, html: { class: 'd-flex col' } do |form| %>
@@ -13,8 +15,7 @@
       <% end %>
       <% end %>
       </div>
-  <div class="costume-card">
-    <%= render "map" ,markers: @markers%>
+    <%= render "map" ,markers: @markers %>
     <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
-  </div>
-  </div>
+    </div>
+</div>
