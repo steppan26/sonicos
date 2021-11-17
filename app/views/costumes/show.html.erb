@@ -37,6 +37,8 @@
     <%= render "/offers/new.html.erb", costume: @costume, offer: @offer %>
   <% end %>
 
-
-  <%= link_to "Back", "/costumes" %>
+  <% if policy(@costume).destroy? %>
+    <%= link_to 'Delete', costume_path(@costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
+  <% end %>
+  <%= link_to "Back", "/dashboard" %>
 </div>
