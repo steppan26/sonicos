@@ -1,8 +1,8 @@
 <div class="card-custom m-4">
   <% if costume.photos.attached? %>
-    <%= cl_image_tag costume.photos.first.key, crop: :fill, class: "card-img" %>
+    <%= cl_image_tag costume.photos.first.key, crop: :pad, class: "card-img" %>
   <% else %>
-    <%= image_tag costume.image_url, class: "card-img", crop: :fill %>
+    <%= image_tag costume.image_url, class: "card-img", crop: :pad %>
   <% end %>
   <div class="card-body">
     <h3 class="card-title"><%= costume.title %></h3>
