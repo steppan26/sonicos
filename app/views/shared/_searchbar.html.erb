@@ -1,6 +1,7 @@
 <div class="searchbar-container">
   <%= form_with url: "/costumes", method: :get, html: { class: 'searchbar-wrapper' } do |form| %>
-    <%= form.text_field :address, placeholder: "Search location", class:"searchbar-address searchbar bg-light border-primary form-control m-2" %>
+    <%= form.text_field :address, placeholder: "Search location", class:"searchbar-address searchbar bg-light border-primary form-control m-2", input_html: { data: { geocoder_target: "searchbar-address" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
     <%= form.date_field :date, placeholder: "When ?", class:"searchbar-date searchbar bg-light  border-primary form-control m-2" %>
     <%= form.number_field :address, placeholder: "Length of hire", class:"searchbar-length searchbar bg-light border-primary form-control m-2" %>
     <%= button_tag type:"submit", class: "search-button btn btn-search text-white m-2" do %>

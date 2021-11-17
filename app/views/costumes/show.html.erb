@@ -3,12 +3,12 @@
   <% if @costume.photos.attached? %>
     <div class="d-flex p-2 m-2">
       <div>
-        <%= cl_image_tag @costume.photos.first.key, height: 350, width: 450, crop: :fill %>
+        <%= cl_image_tag @costume.photos.first.key, height: 300, width: 400, crop: :pad %>
       </div>
       <div class="row m-3">
           <% @costume.photos.each do |photo| %>
             <div class="col-6">
-              <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+              <%= cl_image_tag photo.key, width: 150, height: 200, crop: :fit %>
             </div>
           <% end %>
       </div>
