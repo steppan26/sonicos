@@ -14,10 +14,10 @@ class CostumePolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user || user.admin
+    user != nil && (record.user == user || user.admin)
   end
 
   def destroy?
-    record.user == user || user.admin
+    user != nil && (record.user == user || user.admin)
   end
 end

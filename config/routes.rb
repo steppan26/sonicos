@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :costumes, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :offers, only: :create
+    resources :offers, only: [:new, :create]
   end
   resources :offers, only: [:index, :show, :destroy]
 end
