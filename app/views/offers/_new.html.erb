@@ -1,1 +1,7 @@
-<h1>Hello</h1>
+<%= form_for [costume, offer] do |f| %>
+  <%= f.label :date_of_hire %>
+  <%= f.date_field :date_of_hire %>
+  <%= f.label :duration %>
+  <%= f.number_field :duration %>
+  <%= f.submit %>
+<% end %>
