@@ -1,10 +1,10 @@
-<div class="container" data-controller="dashboard">
+<div class="container" data-controller="dashboard" data-dashboard-target="parent" data-page-to-load=<%= @active_tab %>>
   <h2 class="my-4">Welcome home <%= current_user.username.capitalize %>!!</h2>
   <div class="dashboard-tabs">
-    <div class="tab active" data-action="click->dashboard#toggle" data-page-name="homepage">My Sonics</div>
-    <div class="tab" data-action="click->dashboard#toggle" data-page-name="search">Find a Sonic</div>
-    <div class="tab" data-action="click->dashboard#toggle" data-page-name="new">Create a Sonic</div>
-    <div class="tab" data-action="click->dashboard#toggle" data-page-name="offers">My offers</div>
+    <div class="tab active" data-action="click->dashboard#toggle_page" data-dashboard-target="tab" data-page-name="homepage">My Sonics</div>
+    <div class="tab" data-action="click->dashboard#toggle_page" data-dashboard-target="tab" data-page-name="search">Find a Sonic</div>
+    <div class="tab" data-action="click->dashboard#toggle_page" data-dashboard-target="tab" data-page-name="new">Create a Sonic</div>
+    <div class="tab" data-action="click->dashboard#toggle_page" data-dashboard-target="tab" data-page-name="offers">My offers</div>
   </div>
   <div class="dashboard-wrapper container" data-dashboard-target="dashboard-wrapper">
       <%= render 'homepage' %>

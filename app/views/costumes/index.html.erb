@@ -1,6 +1,11 @@
 <div class="container">
-  <div class="costume-card">
-    <%= render "map", markers: @markers%>
-    <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
+  <div class="d-flex flex-row-reverse">
+    <button class="filter-btn p-2">Availibility</button>
+    <button class="filter-btn p-2">By price</button>
+    <button class="filter-btn p-2">Filter</button>
   </div>
+      <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE <%=  %></h5>
+    
+    <%= render "map" ,markers: @markers %>
+    <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
 </div>

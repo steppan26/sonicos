@@ -3,7 +3,8 @@
   <% if @costume.photos.attached? %>
     <div class="d-flex p-2 m-2">
       <div>
-        <%= cl_image_tag @costume.photos.first.key, height: 300, width: 400, crop: :pad %>
+
+        <%= cl_image_tag @costume.photos.first.key%>
       </div>
       <div class="row m-3">
           <% @costume.photos.each do |photo| %>
