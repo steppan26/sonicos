@@ -4,7 +4,7 @@
     <div class="d-flex p-2 m-2">
       <div>
 
-        <%= cl_image_tag @costume.photos.first.key%>
+        <%= cl_image_tag @costume.photos.first.key, width: 300, height: 350, crop: :fit%>
       </div>
       <div class="row m-3">
           <% @costume.photos.each do |photo| %>
@@ -31,13 +31,17 @@
   </p>
 
   <% if policy(@costume).edit? %>
+  <div style = "background-color: white, box-radius: 10px", class = "p-3">
     <%= render "new_edit" ,costume: @costume%>
+   </div>
   <% elsif Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == current_user.id } %>
     <h3>You have put an offer on this costume !</h3>
   <% else%>
-    <h2>Is it to your tastes</h2>
+  <div style = "background-color: white", class = "p-3">
+    <h2>Is it to your tastes?</h2>
     <p>You can rent it</p>
     <%= render "/offers/new.html.erb", costume: @costume, offer: @offer %>
+  </div>
   <% end %>
 
   <% if policy(@costume).destroy? %>
