@@ -4,10 +4,12 @@
     <div class="tab active" data-action="click->dashboard#toggle" data-page-name="homepage">My Sonics</div>
     <div class="tab" data-action="click->dashboard#toggle" data-page-name="search">Find a Sonic</div>
     <div class="tab" data-action="click->dashboard#toggle" data-page-name="new">Create a Sonic</div>
+    <div class="tab" data-action="click->dashboard#toggle" data-page-name="offers">My offers</div>
   </div>
   <div class="dashboard-wrapper container" data-dashboard-target="dashboard-wrapper">
       <%= render 'homepage' %>
       <%= render 'search-costume' %>
       <%= render 'new-costume', costume: @costume %>
+      <%= render 'offers' %>
   </div>
 </div>
