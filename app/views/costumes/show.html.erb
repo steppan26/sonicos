@@ -29,7 +29,7 @@
   To contact this person of great taste, try sending them a mail at : <span style="color:blue"><u><strong><%= @costume.user.email %></strong></u></span>!
   </p>
 
-  <% if @user = @costume.user %>
+  <% if @user == @costume.user %>
     <%= render "new_edit" ,costume: @costume%>
   <% else %>
     <%= render "/offers/new.html.erb" %>
