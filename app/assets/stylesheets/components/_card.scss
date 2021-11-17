@@ -8,6 +8,7 @@
   overflow: hidden;
   box-shadow: 0px 2px 20px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.05);
   transition: box-shadow 160ms ease-in;
+  text-decoration: none;
 }
 
 .card-custom > img {
@@ -22,10 +23,13 @@
   color: $clr-text-secondary;
 }
 
-.costume-card {
-  position: absolute;
-  width: 1290px;
-  height: 711px;
-  left: 75px;
-  top: 395px;
+.card-pricing {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+.card {
+  text-decoration: none;
 }
