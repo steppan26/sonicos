@@ -8,10 +8,13 @@
       </div>
       <div class="row">
         <%= form_with url: "/costumes", method: :get, html: { class: 'd-flex col' } do |form| %>
-      <%= form.text_field :address, placeholder: "Address", class:"bg-light border border-primary rounded form-control m-2" %>
-      <%= form.date_field :date, placeholder: "When ?", class:"bg-light border border-primary rounded form-control m-2" %>
-      <%= form.submit "Sonic Me !", class:"btn btn-primary text-white m-2 rounded"%>
+      <%= form.text_field :address, placeholder: "Address", class:"searchbar bg-light border-primary form-control m-2" %>
+      <%= form.date_field :date, placeholder: "When ?", class:"searchbar bg-light  border-primary form-control m-2" %>
+     <%= button_tag type:"submit", class: "btn btn-search text-white m-2" do %>
+      <i class="fas fa-search pe-3"></i>Sonic Me !
       <% end %>
+      <% end %>
+      </div>
       </div>
     </div>
   </div>
