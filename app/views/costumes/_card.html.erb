@@ -1,13 +1,15 @@
 <div class="card-custom m-4">
-  <% if costume.photos.attached? %>
-
-    <%= cl_image_tag costume.photos.first.key, crop: :pad, class: "card-img" %>
-  <% else %>
-    <%= image_tag costume.image_url, class: "card-img", crop: :pad %>
-  <% end %>
+  <div class="img-wrapper">
+    <% if costume.photos.attached? %>
+      <%= cl_image_tag costume.photos.first.key, crop: :pad, class: "card-img" %>
+    <% else %>
+      <%= image_tag costume.image_url, class: "card-img", crop: :pad %>
+    <% end %>
+    <h3 class="card-title costume-title"><%= costume.title.upcase %></h3>
+  </div>
   <div class="card-body">
-    <h3 class="card-title"><%= costume.title %></h3>
     <h6 class="card-pricing"><%= costume.price %>€ / day</h4>
     <p class="card-text"><%= costume.description %></p>
+    <p class='costume-status'>available</p>
   </div>
 </div>

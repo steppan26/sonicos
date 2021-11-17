@@ -6,28 +6,44 @@
   border-radius: 0.5em;
   background-color: $clr-bakground-primary;
   overflow: hidden;
-  box-shadow: 0px 2px 20px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.05);
+  box-shadow: 0px 2px 20px 6px rgba($color: $clr-bakground-primary-accent, $alpha: 0.1);
   transition: box-shadow 160ms ease-in;
   text-decoration: none;
-}
-
-.card-custom > img {
-  height: 250px;
+  border: 1px solid rgba($color: $clr-text-secondary, $alpha: 0.6);
 }
 
 .card-custom:hover {
-  box-shadow: 0px 2px 2 0px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.23);
+  box-shadow: 0px 2px 20px 3px rgba($color: $clr-bakground-primary-accent, $alpha: 0.3);
 }
+
+.img-wrapper > img {
+  height: 250px;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.costume-title {
+  position: absolute;
+  bottom: 0px;
+  padding-left: 0.3em;
+  color: $clr-text-secondary;
+  text-shadow: 0 0 12px 4px rgba($color: $clr-bakground-primary-accent, $alpha: 0.7);
+}
+
 
 .card-custom .card-subtitle {
   color: $clr-text-secondary;
 }
 
 .card-pricing {
-  font-size: 16px;
+  text-align: right;
   font-weight: bold;
   margin: 0;
   text-decoration: none;
+  opacity: 0.6;
+  margin-bottom: 0.5em;
 }
 
 .card {
