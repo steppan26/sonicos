@@ -1,0 +1,7 @@
+<ul>
+  <% @offers.each do |offer| %>
+    <li>
+      <%= render "/costumes/card", costume: offer.costume %>
+    </li>
+  <% end %>
+</ul>
