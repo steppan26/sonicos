@@ -19,5 +19,13 @@
 }
 
 .card-custom .card-subtitle {
-    color: $clr-text-secondary;
+  color: $clr-text-secondary;
+}
+
+.costume-card {
+  position: absolute;
+  width: 1290px;
+  height: 711px;
+  left: 75px;
+  top: 395px;
 }
