@@ -5,6 +5,8 @@
     <button class="filter-btn p-2">Filter</button>
   </div>
       <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE PARIS</h5>
-    <%= render "map" ,markers: @markers %>
+    <div class="map-container">
+      <%= render "map" ,markers: @markers %>
+    </div>
     <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
 </div>
