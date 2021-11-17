@@ -1,5 +1,5 @@
 .navbar-lewagon {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100vw;
   justify-content: space-between;
@@ -31,7 +31,6 @@ padding: 0.5em 1em;
 .nav-item > a {
   color: $clr-bakground-primary !important;
   font-size: 1.2em;
-
 }
 
 .nav-item > a:hover {
