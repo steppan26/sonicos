@@ -1,4 +1,4 @@
-<div id="new" class="mt-3  pb-5" data-dashboard-target="section">
+<div id="new" class="mt-3  pb-5 hidden" data-dashboard-target="section">
   <h3 class="my-5">Create a new Sonic</h3>
 
 <%= simple_form_for costume do |f| %>
@@ -7,7 +7,7 @@
   <%= f.input :description %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.input :location,
-              input_html: { data: { geocoder_target: "location" } },
+              input_html: { data: { geocoder_target: "location" }, class: "d-none" },
               wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
   <%= f.submit "Go Faster" %>
 <% end %>
