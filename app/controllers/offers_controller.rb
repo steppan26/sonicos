@@ -23,9 +23,12 @@ class OffersController < ApplicationController
     @offer.costume_id = @costume.id
     @offer.status = "pending"
     authorize @offer
-    @offer.save!
-
-    redirect_to costume_path(@costume)
+    if @offer.save
+      @offer.save
+      redirect_to costume_path(@costume)
+    else
+      render "costumes/show"
+    end
   end
 
   def destroy

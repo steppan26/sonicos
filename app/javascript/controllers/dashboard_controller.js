@@ -1,9 +1,18 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "dashboard-wrapper", "section", "tab" ];
+  static targets = [ "dashboard-wrapper", "section", "tab", "parent" ];
 
   connect() {
+    const pageName = this.parentTarget.dataset.pageToLoad
+    this._show_page(pageName);
+    let tab_target;
+    this.tabTargets.forEach(tab => {
+      if (tab.dataset.pageName === pageName) {
+        tab_target = tab;
+      }
+    })
+    this._activate_tab(tab_target);
   }
 
   toggle_page(event) {

@@ -28,9 +28,11 @@ class CostumesController < ApplicationController
     @user = current_user
     @costume.user_id = current_user.id
     authorize @costume
-    @costume.save
-
-    redirect_to costume_path(@costume)
+    if @costume.save
+      redirect_to costume_path(@costume)
+    else
+      redirect_to controller: 'pages', action: 'dashboard', page: 'new'
+    end
   end
 
   def edit

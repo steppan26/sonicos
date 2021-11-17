@@ -1,7 +1,5 @@
-<%= form_for [costume, offer] do |f| %>
-  <%= f.label :date_of_hire %>
-  <%= f.date_field :date_of_hire %>
-  <%= f.label :duration %>
-  <%= f.number_field :duration %>
+<%= simple_form_for [costume, offer] do |f| %>
+  <%= f.input :date_of_hire %>
+  <%= f.input :duration %>
   <%= f.submit %>
 <% end %>
