@@ -7,6 +7,9 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <% unless current_page?(root_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
+    <%= render 'shared/searchbar' %>
+  <% end %>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
