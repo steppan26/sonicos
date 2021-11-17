@@ -51,7 +51,7 @@ class CostumesController < ApplicationController
     @costume.destroy
     authorize @costume
 
-    redirect_to costumes_path
+    redirect_to "/dashboard"
   end
 
   private
