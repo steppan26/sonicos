@@ -9,6 +9,8 @@
   flex-flow: column nowrap;
   align-items: flex-start;
   width: max-content;
+  z-index: 999;
+  position: relative;
 }
 
 .dashboard-wrapper {
@@ -31,7 +33,9 @@
   opacity: 0.6;
   margin: 0.2em 0;
   width: 80%;
-  transition: all 210ms ease-in-out;
+  height: 50px;
+  transition: width 210ms ease-in-out;
+  transition: all 610ms ease-in-out;
 }
 
 .dashboard-tabs .tab:hover {
@@ -45,7 +49,22 @@ width: 95%;
   color: $clr-bakground-primary;
   font-weight: 700;
   width: 95%;
+  color: $clr-text-secondary;
+}
 
+.dashboard-tabs .tab.active.new{
+  height: 450px;
+  width: 150%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.dashboard-tabs .tab.active.new span{
+  display: block;
+  background-color: inherit;
+  position: sticky;
+  top: -0.5em;
+  padding-bottom: 1em;
 }
 
 .display-cards {
