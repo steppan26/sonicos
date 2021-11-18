@@ -5,9 +5,6 @@
       <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE PARIS</h5>
     <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
       </div>
-    </div>
-    <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
-  </div>
   <div class="map-container" data-indexpage-target="mapContainer">
   <div class="map-toggle-button" data-action="click->indexpage#toggle_map_display"><i class="fas fa-angle-right"></i></div>
     <%= render "map" ,markers: @markers %>
