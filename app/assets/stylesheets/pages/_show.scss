@@ -1,0 +1,15 @@
+.content-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.content-info {
+  flex: 1 1 66%;
+}
+
+.content-form {
+  position: sticky;
+  top: 20vh;
+  margin-top: 5em;
+  flex: 0 1 40%
+}
