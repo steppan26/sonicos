@@ -38,6 +38,8 @@
             <%= User.find(offer.user_id).username %> (<%= offer.status %>)
             <% if offer.status == "pending" %>
               | <%= link_to 'Accept',  accept_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
+            <% elsif offer.status == "accepted" %>
+              <%= link_to 'Cancel',  cancel_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
             <% end %>
             <br>
           <% end %>

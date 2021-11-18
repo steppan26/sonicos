@@ -18,4 +18,8 @@ class OfferPolicy < ApplicationPolicy
   def accept?
     true
   end
+
+  def cancel?
+    true
+  end
 end

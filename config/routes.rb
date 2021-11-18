@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :offers, only: [:index, :show, :destroy] do
     member do
       post "accept"
+      post "cancel"
     end
   end
 end

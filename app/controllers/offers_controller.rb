@@ -33,14 +33,27 @@ class OffersController < ApplicationController
 
   def accept
     @offer = Offer.find(params[:id])
-    @offers_all = Offer.where( costume_id: @offer.costume_id )
+    @offers = Offer.where( costume_id: @offer.costume_id )
     @costume = Costume.find(@offer.costume_id)
-    @offers_all.each do |offer|
+    @offers.each do |offer|
       offer.status = "rejected"
       offer.save
     end
     @offer.status = "accepted"
     @offer.save
+    authorize @offer
+
+    redirect_to costume_path(@costume)
+  end
+
+  def cancel
+    @offer = Offer.find(params[:id])
+    @offers = Offer.where( costume_id: @offer.costume_id )
+    @costume = Costume.find(@offer.costume_id)
+    @offers.each do |offer|
+      offer.status = "pending"
+      offer.save
+    end
     authorize @offer
 
     redirect_to costume_path(@costume)
