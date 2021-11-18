@@ -59,7 +59,6 @@ h6 {
   font-size: large;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0px 50px; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation:
     typing 3.5s steps(50, end),

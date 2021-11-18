@@ -6,10 +6,15 @@
 .searchbar-wrapper {
   display: flex;
   flex-flow: row nowrap;
+  margin-right: auto;
+}
+
+.navbar-search {
+  padding-right: 2.5em;
 }
 
 .searchbar-address {
-  flex: 1 1 35%;
+  flex: 1 1 25%;
 }
 
 .searchbar-date {
@@ -41,6 +46,6 @@
   }
 }
 
-@media (max-width: 1120px) {
-  .navbar-search {}
+@media (max-width: 1020px) {
+  .navbar-search { display: none; }
 }
