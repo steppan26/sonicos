@@ -6,8 +6,6 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
-<<<<<<< HEAD
-=======
 
 .map-toggle-button {
   cursor: pointer;
@@ -27,4 +25,8 @@
 .map-toggle-button:hover {
   opacity: 1;
 }
->>>>>>> master
+
+.show-map {
+  height: 300px;
+  width: 300px;
+}

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-7">
+    <div class="col-6">
       <div class="content-wrapper">
         <div class="content-info">
           <h1><%= @costume.title %></h1>
@@ -38,8 +38,8 @@
         </div>
      </div>
     </div>
-    <div class="map-container col-5">
-    <% if policy(@costume).edit? %>
+    <div class="map-container col-6">
+      <% if policy(@costume).edit? %>
             <h3>Offers</h3>
             <% offers = Offer.where( costume_id: params[:id]) %>
             <% if offers.empty? %>
@@ -74,7 +74,11 @@
               <%= render "/offers/new.html.erb", costume: @costume, offer: @offer %>
             </div>
           <% end %>
-    <%= render "maps" ,markers: @markers %>
+        <% if !policy(@costume).edit? %>
+          <div class="show-map">
+            <%= render "map" ,markers: @markers %>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>
