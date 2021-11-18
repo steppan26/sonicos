@@ -214,3 +214,9 @@
     font-weight: 600;
     text-transform: uppercase;
 }
+
+.display-card-in-the-right-order {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

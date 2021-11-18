@@ -1,5 +1,5 @@
 <%# <ul class="display-cards"> %>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+<div class="display-card-in-the-right-order">
   <% costumes.each do |costume| %>
         <%= render '/costumes/card', costume: costume %>
   <% end %>
