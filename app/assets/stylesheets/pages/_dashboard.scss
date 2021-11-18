@@ -59,12 +59,18 @@ width: 95%;
   scrollbar-width: none;
 }
 
-.dashboard-tabs .tab.active.new span{
+.dashboard-tabs .tab.new span{
   display: block;
+  height: 100%;
+}
+
+.dashboard-tabs .tab.active.new span{
+  height: auto;
   background-color: inherit;
   position: sticky;
   top: -0.5em;
   padding-bottom: 1em;
+  overflow-x: hidden;
 }
 
 .display-cards {
