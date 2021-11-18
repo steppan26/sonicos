@@ -3,7 +3,7 @@
         <div class="collection-list-4 w-dyn-items">
           <div class="">
             <div role="list-item" class="w-dyn-item">
-              <a href="" class="pack-card-home w-inline-block">
+              <div class="pack-card-home w-inline-block">
                 <div class="card-image-container">
                 <img <% if costume.photos.attached? %>
                   <%= cl_image_tag costume.photos.first.key, crop: :pad, class: "grid-image", width: 300, height: 300 %>
@@ -24,7 +24,8 @@
                 <%= costume.description %>
                 </div>
                 <div class="_40px-divider"></div>
-              </a></div>
+              </div>
+            </div>
         </div>
     </div>
 </div>
