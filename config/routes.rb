@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   resources :costumes, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :offers, only: [:new, :create]
   end
-  resources :offers, only: [:index, :show, :destroy]
+  resources :offers, only: [:index, :show, :destroy] do
+    member do
+      post "accept"
+      post "cancel"
+    end
+  end
 end

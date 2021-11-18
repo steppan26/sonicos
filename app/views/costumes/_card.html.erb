@@ -1,15 +1,38 @@
-<div class="card-custom m-3">
-  <div class="img-wrapper">
-    <% if costume.photos.attached? %>
-      <%= cl_image_tag costume.photos.first.key, crop: :pad, class: "card-img" %>
-    <% else %>
-      <%= image_tag costume.image_url, class: "card-img", crop: :pad %>
-    <% end %>
-    <h3 class="card-title costume-title"><%= costume.title.upcase %></h3>
-  </div>
-  <div class="card-body">
-    <h6 class="card-pricing"><%= costume.price %>€ / day</h4>
-    <p class="card-text"><%= costume.description %></p>
-    <p class='costume-status'><i class="fas fa-circle card-icon"></i> available</p>
-  </div>
+<div class="home---featured-products wf-section">
+    <div class="home-grid-container">
+        <div class="collection-list-4 w-dyn-items">
+          <div class="">
+            <div role="list-item" class="w-dyn-item">
+              <div class="pack-card-home w-inline-block">
+                <div class="card-image-container">
+                  <img <% if costume.photos.attached? %>
+                    <%= cl_image_tag costume.photos.first.key, crop: :pad, class: "grid-image", width: 300, height: 300 %>
+                  <% else %>
+                    <%= image_tag costume.image_url, class: "grid-image", crop: :pad %>
+                  <% end %>>
+                </div>
+                <div class="_40px-divider"></div>
+                <div class="paid-label-container">
+                  <div class="free-label-text"><%= costume.price %>€</div>
+                </div>
+                <% if Offer.where( costume_id: costume.id, status: "accepted" ).empty? %>
+                  <div class="available-label-container">
+                    <div class="available-label-text">available</div>
+                  </div>
+                <% else %>
+                  <div class="unavailable-label-container">
+                    <div class="available-label-text">unavailable</div>
+                  </div>
+                <% end %>
+                  <div class="_10px-divider"></div>
+                <div class="h2-card-title"><%= costume.title.upcase %></div>
+                <div class="_40px-divider"></div>
+                <div class="p-meta">
+                  <%= costume.description %>
+                </div>
+                <div class="_40px-divider"></div>
+              </div>
+            </div>
+        </div>
+    </div>
 </div>
