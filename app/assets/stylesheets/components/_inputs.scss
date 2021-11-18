@@ -1,0 +1,12 @@
+.input-custom {
+  border-radius: 8px;
+  background: #FFFEFC;
+  border: 2px solid $clr-bakground-primary-accent;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+.input-custom:active,
+.input-custom:focus {
+  border-color: $clr-text-secondary;
+}

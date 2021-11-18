@@ -1,8 +1,11 @@
 // Specific CSS for your home-page
 body {
-  width: 100vw;
+  position: relative;
+  min-width: 100vw;
   height: auto;
   font-family: Poppins;
+  min-height: 100vh;
+  background-color: $clr-bakground-primary-accent;
 }
 
 a,
@@ -11,9 +14,9 @@ a:hover {
 }
 
 main {
+  position: relative;
   width: 100%;
   height: 100%;
-  overflow: scroll;
 }
 
 .hidden {
