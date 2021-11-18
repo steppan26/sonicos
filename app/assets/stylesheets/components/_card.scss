@@ -61,6 +61,62 @@
   font-size: 0.4em;
 }
 
+.card-custom-ring {
+  position: relative;
+  color: $clr-text-secondary;
+  opacity: 0.6;
+  transition: opacity 120ms ease-in-out;
+}
+
+.card-custom-ring .costume-price {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0.7;
+  font-weight: 700;
+  transition: opacity 220ms ease-in-out;
+}
+
+.card-custom-ring:hover,
+.card-custom-ring:hover .costume-price {
+  opacity: 1;
+}
+
+.card-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0.5em;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 15px solid $clr-text-secondary;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.card-image > h4 {
+  opacity: 0.4;
+  transition: opacity 220ms ease-in-out;
+}
+
+.card-image:hover > h4 {
+  opacity: 1;
+}
+
+.card-image > img {
+  border-bottom: none;
+  object-fit: scale-down;
+  margin: auto;
+}
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+
 
 .pack-card-home {
     width: 100%;
