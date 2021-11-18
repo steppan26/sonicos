@@ -33,8 +33,8 @@
         </div>
       <% elsif Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == current_user.id } %>
         <% offer = Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == current_user.id } %>
-        <h3>You have put an offer on this costume !</h3> |
-        <%= link_to 'Delete', offer_path(offer.id), method: :delete, data: { confirm: "Are you sure?" } %>
+        <h3>You have put an offer on this costume !</h3>
+        <%= link_to 'Delete my offer', offer_path(offer.id), method: :delete, data: { confirm: "Are you sure?" } %>
         <br>
       <% else%>
         <div style = "background-color: white", class = "p-3">
@@ -49,6 +49,7 @@
       <% if policy(@costume).destroy? %>
         <%= link_to 'Delete', costume_path(@costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
       <% end %>
+      <%= link_to "Back", "/dashboard" %>
     </div>
   </div>
 </div>
