@@ -23,6 +23,12 @@ class CostumesController < ApplicationController
     @user = current_user
     @offer = Offer.new
     authorize @costume
+    @markers = [
+      {
+        lat: @costume.latitude,
+        lng: @costume.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { costume: @costume })
+      }]
   end
 
   def create
