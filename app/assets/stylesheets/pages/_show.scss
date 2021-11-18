@@ -1,6 +1,36 @@
 .content-wrapper {
-  display: flex;
   position: relative;
+}
+
+.modal-custom {
+  padding: 1em;
+  margin: auto;
+  width: 80vw;
+  height: 80vh;
+  background-color: $clr-text-secondary;
+  overflow: scroll;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 20px rgba($color: $clr-bakground-secondary, $alpha: 0.4);
+}
+
+.modal-content-custom {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.costume-info {
+  flex: 1 0 60%;
+}
+
+.costume-options {
+  flex: 0 1 40%;
+  border: 3px solid $clr-bakground-secondary;
+  height: 100%;
+  width: 100%;
+}
+
+.modal .map-container {
+  flex: none;
 }
 
 .content-info {
