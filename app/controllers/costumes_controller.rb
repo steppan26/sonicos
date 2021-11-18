@@ -8,7 +8,6 @@ class CostumesController < ApplicationController
         lat: costume.latitude,
         lng: costume.longitude,
         info_window: render_to_string(partial: "info_window", locals: { costume: costume }),
-        image_url: helpers.asset_url("sonic_icon.png")
       }
     end
   end
