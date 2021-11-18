@@ -60,7 +60,9 @@ width: 95%;
 }
 
 .dashboard-tabs .tab.new span{
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 100%;
 }
 

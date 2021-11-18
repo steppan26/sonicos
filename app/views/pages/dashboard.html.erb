@@ -5,7 +5,7 @@
       <div class="tab" data-action="click->dashboard#toggle_page" data-dashboard-target="tab" data-page-name="search">Sonics near me</div>
       <div class="tab" data-action="click->dashboard#toggle_page" data-dashboard-target="tab" data-page-name="offers">My offers</div>
       <div class="tab new" data-dashboard-target="newTab">
-        <span data-action="click->dashboard#new_costume_handler">Create a Sonic</span>
+        <span data-action="click->dashboard#new_costume_handler">Create a Sonic<i class="fas fa-plus ms-1" data-dashboard-target="newCostumeIcon"></i></span>
         <%= render 'new-costume', costume: @costume %>
       </div>
     </div>
