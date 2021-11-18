@@ -1,17 +1,17 @@
 .footer {
   display: block;
   width: 100%;
-  text-align: center;
   height: 100px;
   padding: 1em 0;
-  color: rgba(0,0,0,2);
-  align-self: flex-end;
   margin-top: 2em;
+  text-align: center;
+  align-self: flex-end;
   bottom: 0;
-  z-index: 999;
+  bottom: 0;
   color: #FEFEFE;
-  background-color: $clr-bakground-secondary;
-  bottom: 0;
+  background-color: transparent;
+  margin-top: auto;
+  z-index: 999;
 }
 .footer-links {
   margin: auto;
@@ -21,7 +21,7 @@
   margin-bottom: 0.5em;
 }
 .footer-links a {
-  color: white;
+  color: $clr-bakground-primary;
   opacity: 0.3;
   text-decoration: none;
   font-size: 24px;
@@ -29,7 +29,4 @@
 }
 .footer-links a:hover {
   opacity: 0.8;
-}
-.footer .fa-heart {
-  color: #FEFEFE;
 }

@@ -7,8 +7,10 @@
   top: 0;
   width: 100vw;
   justify-content: space-between;
-  background-color: $clr-bakground-secondary;
-  z-index: 999;
+  background: #1a2a6c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+  z-index: 5;
   padding-right: 1em;
 }
 
@@ -16,9 +18,19 @@
   flex-grow: 0;
 }
 
+.navbar-lewagon .navbar-brand{
+  padding-left: 4%;
+  text-align: center;
+}
+
+.navbar-lewagon .navbar-brand,
+.navbar-lewagon .navbar-brand h6 {
+  margin: 0;
+  font-size: 1em;
+}
+
 .navbar-lewagon .navbar-brand img {
-  width: 250px;
-  padding-left: 20%;
+  width: 150px;
   vertical-align: middle;
 }
 
@@ -45,11 +57,10 @@ padding: 0.5em 1em;
   box-shadow: 0 0 0 2px $clr-text-secondary;
 }
 
-h6 {
+.navbar h6 {
   font-size: large;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0px 50px; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation:
     typing 3.5s steps(50, end),

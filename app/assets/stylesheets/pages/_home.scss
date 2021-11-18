@@ -1,11 +1,13 @@
 // Specific CSS for your home-page
 body {
+  display: flex;
+  flex-flow: column nowrap;
   position: relative;
-  min-width: 100vw;
   height: auto;
-  font-family: Poppins;
+  min-width: 100vw;
   min-height: 100vh;
-  background-color: $clr-bakground-primary-accent;
+  font-family: Poppins;
+  background: linear-gradient(to left, #ebb43e, #b93b3b, #2a43a8);
 }
 
 a,

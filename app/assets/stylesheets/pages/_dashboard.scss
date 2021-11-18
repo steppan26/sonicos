@@ -9,8 +9,8 @@
   flex-flow: column nowrap;
   align-items: flex-start;
   width: max-content;
-  z-index: 999;
-  position: relative;
+  z-index: 4;
+  position: fixed;
 }
 
 .dashboard-wrapper {
@@ -34,8 +34,7 @@
   margin: 0.2em 0;
   width: 80%;
   height: 50px;
-  transition: width 210ms ease-in-out;
-  transition: all 610ms ease-in-out;
+  transition: width 310ms ease-in-out, opacity 260ms ease-in-out, height 610ms ease-in;
 }
 
 .dashboard-tabs .tab:hover {

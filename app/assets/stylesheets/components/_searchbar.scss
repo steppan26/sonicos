@@ -6,22 +6,27 @@
 .searchbar-wrapper {
   display: flex;
   flex-flow: row nowrap;
+  margin-right: auto;
+}
+
+.navbar-search {
+  padding-right: 2.5em;
 }
 
 .searchbar-address {
-  flex: 1 1 35%;
+  flex: 1 1 25%;
 }
 
 .searchbar-date {
-  flex: 0 0 15%;
+  flex: 0 0 25%;
 }
 
 .searchbar-length {
-  flex: 0 0 15%;
+  flex: 0 0 25%;
 }
 
 .searchbar-button {
-  flex: 1 1 100%;
+  flex: 0 1 100%;
 }
 
 @media (max-width: 850px) {
@@ -39,4 +44,8 @@
   .searchbar-button {
     flex: 0 0 100%;
   }
+}
+
+@media (max-width: 1020px) {
+  .navbar-search { display: none; }
 }

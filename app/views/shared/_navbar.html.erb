@@ -9,7 +9,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <% unless current_page?(root_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
-    <%= render 'shared/searchbar' %>
+    <div class="navbar-search"><%= render 'shared/searchbar' %></div>
   <% end %>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -17,7 +17,7 @@
           <%= link_to "Dashboard", "/dashboard", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://img.huffingtonpost.com/asset/5ff3371b260000ae2b7a3827.jpeg?cache=AfBaoaRwUB&ops=scalefit_630_noupscale", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
