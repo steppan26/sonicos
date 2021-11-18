@@ -42,6 +42,7 @@
               <%= link_to 'Cancel',  cancel_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
             <% end %>
             <br>
+            <p>From <%= offer.date_of_hire %> to <%= offer.date_of_end %></p>
           <% end %>
         <% end %>
         <div style = "background-color: white, box-radius: 10px", class = "p-3">
@@ -52,6 +53,8 @@
         <h3>You have put an offer on this costume !</h3>
         <%= link_to 'Delete my offer', offer_path(offer.id), method: :delete, data: { confirm: "Are you sure?" } %>
         <br>
+      <% elsif Offer.where( costume_id: @costume.id, status: "accepted" ) %>
+        <p>This costume is not available</p>
       <% else%>
         <div class="content-form">
           <h2>Is it to your tastes?</h2>
