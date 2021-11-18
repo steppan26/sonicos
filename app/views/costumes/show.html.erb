@@ -35,7 +35,9 @@
     <%= render "new_edit" ,costume: @costume%>
    </div>
   <% elsif Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == current_user.id } %>
-    <h3>You have put an offer on this costume !</h3>
+    <% offer = Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == current_user.id } %>
+    <h3>You have put an offer on this costume !</h3> |
+    <%= link_to 'Delete', offer_path(offer.id), method: :delete, data: { confirm: "Are you sure?" } %>
   <% else%>
   <div style = "background-color: white", class = "p-3">
     <h2>Is it to your tastes?</h2>
