@@ -5,16 +5,22 @@
         <div class="content-info">
           <h1><%= @costume.title %></h1>
           <% if @costume.photos.attached? %>
-            <div class="d-flex p-2 m-2">
-              <div>
-                <%= cl_image_tag @costume.photos.first.key, width: 300, height: 350, crop: :fit%>
-              </div>
-              <div class="row m-3">
-                  <% @costume.photos.each do |photo| %>
-                    <div class="col-6">
-                      <%= cl_image_tag photo.key, width: 150, height: 200, crop: :fit %>
-                    </div>
-                  <% end %>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-controller="show">
+              <div class="carousel-inner">
+                <% @costume.photos.each do |photo| %>
+                  <div class="carousel-item" data-show-target="item">
+                    <%= cl_image_tag photo.key, width: 150, height: 200, crop: :fit, class: "d-block w-100" %>
+                  </div>
+                <% end %>
+                </div>
+                <div class="carousel-control-prev" role="button" data-slide="prev" data-action="click->show#previous">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </div>
+                <div class="carousel-control-next" role="button" data-slide="next" data-action="click->show#next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </div>
               </div>
             </div>
           <% else %>
@@ -36,7 +42,6 @@
             <%= link_to "Back", "/dashboard" %>
           </div>
         </div>
-     </div>
     </div>
     <div class="map-container col-6">
       <% if policy(@costume).edit? %>
