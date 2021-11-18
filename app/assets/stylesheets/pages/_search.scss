@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .index-header{
@@ -11,15 +12,20 @@
 }
 
 .costumes-container {
-  flex: 0 1 66vw;
+  flex: 1 1 100%;
   padding: 0 2em;
 }
 
 .map-container {
   position: sticky;
-  flex: 1 1 33vw;
+  flex: 1 1 45vw;
   top: 10vh;
   bottom: 10vh;
   right: 0;
   z-index: 5;
+  transition: flex 280ms ease-in-out;
+}
+
+.map-container.reduce {
+  flex: 0 1 0vw !important;
 }

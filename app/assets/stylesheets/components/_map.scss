@@ -19,7 +19,7 @@
   color: $clr-bakground-secondary;
   background-color: $clr-text-secondary;
   opacity: 0.8;
-  transition: opacity 180ms ease-in-out, width 280ms ease-in-out;
+  transition: opacity 180ms ease-in-out;
 }
 
 .map-toggle-button:hover {

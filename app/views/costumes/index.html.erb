@@ -1,4 +1,4 @@
-<div class="index-display">
+<div class="index-display" data-controller="indexpage">
   <div class="costumes-container">
     <div class="index-header">
       <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE PARIS</h5>
@@ -10,8 +10,8 @@
     </div>
     <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
   </div>
-  <div class="map-container">
-  <div class="map-toggle-button"><i class="fas fa-angle-right"></i></div>
+  <div class="map-container" data-indexpage-target="mapContainer">
+  <div class="map-toggle-button" data-action="click->indexpage#toggle_map_display"><i class="fas fa-angle-right"></i></div>
     <%= render "map" ,markers: @markers %>
   </div>
 </div>
