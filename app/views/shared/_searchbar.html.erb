@@ -1,5 +1,5 @@
 <div class="searchbar-container">
-  <%= form_with url: "/costumes", html: { class: 'searchbar-wrapper' } do |f| %>
+  <%= form_with url: "/costumes", method: :get, html: { class: 'searchbar-wrapper' } do |f| %>
     <%= f.text_field :address,
                         placeholder: "Search location",
                         class:"searchbar-address input-custom form-control m-2",
