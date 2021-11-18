@@ -42,6 +42,7 @@
               <%= link_to 'Cancel',  cancel_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
             <% end %>
             <br>
+            <p>From <%= offer.date_of_hire %> to <%= offer.date_of_end %></p>
           <% end %>
         <% end %>
         <div style = "background-color: white, box-radius: 10px", class = "p-3">
