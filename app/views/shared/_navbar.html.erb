@@ -9,7 +9,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <% unless current_page?(root_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
-    <%= render 'shared/searchbar' %>
+    <div class="navbar-search"><%= render 'shared/searchbar' %></div>
   <% end %>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
