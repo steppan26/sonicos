@@ -9,8 +9,8 @@
   flex-flow: column nowrap;
   align-items: flex-start;
   width: max-content;
-  z-index: 999;
-  position: relative;
+  z-index: 4;
+  position: fixed;
 }
 
 .dashboard-wrapper {
