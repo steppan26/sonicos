@@ -53,7 +53,7 @@
         <h3>You have put an offer on this costume !</h3>
         <%= link_to 'Delete my offer', offer_path(offer.id), method: :delete, data: { confirm: "Are you sure?" } %>
         <br>
-      <% elsif Offer.where( costume_id: @costume.id, status: "accepted" ) %>
+      <% elsif Offer.find { |offer| offer.costume_id == @costume.id && offer.status == "accepted" } %>
         <p>This costume is not available</p>
       <% else%>
         <div class="content-form">
