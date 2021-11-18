@@ -7,7 +7,8 @@ class CostumesController < ApplicationController
       {
         lat: costume.latitude,
         lng: costume.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { costume: costume }),
+        info_window: render_to_string(partial: "info_window", locals: { costume: costume })
+
       }
     end
   end

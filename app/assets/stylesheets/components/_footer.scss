@@ -1,7 +1,6 @@
 .footer {
   display: block;
   width: 100%;
-  z-index: 999;
   text-align: center;
   height: 100px;
   padding: 1em 0;
@@ -12,8 +11,6 @@
   color: #FEFEFE;
   background-color: transparent;
   bottom: 0;
-  position: absolute;
-
 }
 .footer-links {
   margin: auto;
