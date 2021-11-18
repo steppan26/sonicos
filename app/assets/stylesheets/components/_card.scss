@@ -1,3 +1,5 @@
+/////////////// CARD-CUSTOM-PRIMARY //////////////////
+
 .card-custom {
   color: $clr-text-primary;
   max-width: 300px;
@@ -61,6 +63,8 @@
   font-size: 0.4em;
 }
 
+////////////// CARD-RING ////////////////
+
 .card-custom-ring {
   position: relative;
   color: $clr-text-secondary;
@@ -74,6 +78,7 @@
   left: 0px;
   opacity: 0.7;
   font-weight: 700;
+  font-size: 0.8em;
   margin: 0;
   transition: opacity 220ms ease-in-out;
 }
@@ -94,6 +99,7 @@
   width: 200px;
   border-radius: 50%;
   border: 15px solid $clr-text-secondary;
+  box-shadow: 0 2px 6px 2px rgba($color: $clr-bakground-secondary, $alpha: 0.3);
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
@@ -115,9 +121,7 @@
   margin: auto;
 }
 
-/////////////////////////////////////////////
-/////////////////////////////////////////////
-
+///////////////// GUILLAUME CARD-STYLE /////////////////////
 
 .pack-card-home {
     width: 100%;
