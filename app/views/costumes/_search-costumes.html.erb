@@ -1,9 +1,6 @@
-<ul class="display-cards">
+<%# <ul class="display-cards"> %>
+<div class="display-card-in-the-right-order">
   <% costumes.each do |costume| %>
-    <li>
-      <%= link_to costume_path(costume) do %>
-        <%= render '/costumes/card_ring', costume: costume %>
-      <% end %>
-    </li>
+        <%= render '/costumes/card', costume: costume %>
   <% end %>
-</ul>
+</div>

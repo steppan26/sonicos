@@ -1,5 +1,4 @@
 <div id="homepage" class="mt-3" data-dashboard-target="section">
-  <h3 class="dashboard-header">MY SONICS</h3>
   <ul class="display-cards">
     <% if @my_costumes.empty? %>
       <li>You do not currently own any Sonics to see</li>
@@ -7,7 +6,7 @@
       <% @my_costumes.each do |costume| %>
         <li>
           <%= link_to costume_path(costume) do %>
-            <%= render '/costumes/card', costume: costume %>
+            <%= render '/costumes/card_ring', costume: costume %>
           <% end %>
         </li>
       <% end %>
