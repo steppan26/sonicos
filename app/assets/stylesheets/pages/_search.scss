@@ -1,6 +1,25 @@
+.index-display {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.index-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.costumes-container {
+  flex: 0 1 66vw;
+  padding: 0 2em;
+}
+
 .map-container {
   position: sticky;
+  flex: 1 1 33vw;
   top: 10vh;
+  bottom: 10vh;
+  right: 0;
   z-index: 5;
-  margin-bottom: 1em;
 }

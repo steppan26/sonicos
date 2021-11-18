@@ -1,16 +1,17 @@
-<div class="container">
-  <div class="d-flex flex-row-reverse">
-    <button class="filter-btn p-2">Availibility</button>
-    <button class="filter-btn p-2">By price</button>
-    <button class="filter-btn p-2">Filter</button>
-  </div>
-    <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE PARIS</h5>
-    <div class="row">
-      <div class="col-7">
-        <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
-      </div>
-      <div class="map-container col-5">
-        <%= render "map" ,markers: @markers %>
+<div class="index-display">
+  <div class="costumes-container">
+    <div class="index-header">
+      <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE PARIS</h5>
+      <div class="d-flex flex-row-reverse">
+        <button class="filter-btn p-2">Availibility</button>
+        <button class="filter-btn p-2">By price</button>
+        <button class="filter-btn p-2">Filter</button>
       </div>
     </div>
+    <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
+  </div>
+  <div class="map-container">
+  <div class="map-toggle-button"><i class="fas fa-angle-right"></i></div>
+    <%= render "map" ,markers: @markers %>
+  </div>
 </div>
