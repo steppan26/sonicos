@@ -1,7 +1,32 @@
+.index-display {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.index-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.costumes-container {
+  flex: 1 1 100%;
+  padding: 0 2em;
+}
+
 .map-container {
   position: sticky;
+  flex: 1 1 45vw;
   top: 10vh;
+  bottom: 10vh;
+  right: 0;
   z-index: 5;
-  margin-bottom: 1em;
+  transition: flex 280ms ease-in-out;
+}
+
+.map-container.reduce {
+  flex: 0 1 0vw !important;
 }
 
