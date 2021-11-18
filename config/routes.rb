@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :offers, only: [:new, :create]
   end
   resources :offers, only: [:index, :show, :destroy]
+  get '/test', to: "pages#test"
 end

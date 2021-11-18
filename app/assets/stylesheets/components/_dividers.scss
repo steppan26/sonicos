@@ -1,0 +1,41 @@
+._40px-divider {
+  height: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 40px;
+  padding-left: 40px;
+  color: #5e5e5e;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+._10px-divider {
+    width: 10px;
+    height: 10px;
+}
+
+._20px-divider {
+    width: 20px;
+    height: 20px;
+}
+
+.collection-list-4 {
+  grid-column-gap: 13px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.home---featured-products {
+  display: block;
+  overflow: visible;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px 15px 80px;
+  background-color: #f6f7fa;
+}
+
+.home-grid-container {
+  width: 1200px;
+  max-width: 100%;
+   margin-right: auto;
+  margin-left: auto;
+}

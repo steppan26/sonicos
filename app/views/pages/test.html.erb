@@ -1,27 +1,23 @@
 <div class="home---featured-products wf-section">
     <div class="home-grid-container">
         <div class="collection-list-4 w-dyn-items">
-          <div class="">
-            <div role="list-item" class="w-dyn-item">
+          <div class="row">
+            <div role="list-item" class="w-dyn-item col-4">
               <a href="" class="pack-card-home w-inline-block">
                 <div class="card-image-container">
-                <img <% if costume.photos.attached? %>
-                  <%= cl_image_tag costume.photos.first.key, crop: :pad, class: "grid-image", width: 300, height: 300 %>
-                <% else %>
-                  <%= image_tag costume.image_url, class: "grid-image", crop: :pad %>
-                <% end %>></div>
+                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/136082/CCP_IMG_ORIGINAL/1785155.jpg" alt="" class="grid-image"></div>
                 <div class="_40px-divider"></div>
                 <div class="paid-label-container">
-                  <div class="free-label-text"><%= costume.price %>€</div>
+                  <div class="free-label-text">20€</div>
                 </div>
                 <div class="available-label-container">
                   <div class="available-label-text">available</div>
                 </div>
                   <div class="_10px-divider"></div>
-                <div class="h2-card-title"><%= costume.title.upcase %></div>
+                <div class="h2-card-title">MEGA SONIC</div>
                 <div class="_40px-divider"></div>
                 <div class="p-meta">
-                <%= costume.description %>
+                  "The best sonic ever made I love him"
                 </div>
                 <div class="_40px-divider"></div>
               </a></div>
