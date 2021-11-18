@@ -7,7 +7,8 @@ class CostumesController < ApplicationController
       {
         lat: costume.latitude,
         lng: costume.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { costume: costume }),
+        info_window: render_to_string(partial: "info_window", locals: { costume: costume })
+
       }
     end
   end
@@ -22,6 +23,11 @@ class CostumesController < ApplicationController
     @user = current_user
     @offer = Offer.new
     authorize @costume
+    @marker = {
+      lat: @costume.geocoded.latitude,
+      lng: @costume.geocoded.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { costume: @costume })
+    }
   end
 
   def create
