@@ -17,7 +17,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 200px;
+  width: 250px;
   padding-left: 20%;
   vertical-align: middle;
 }
@@ -43,4 +43,26 @@ padding: 0.5em 1em;
 
 #navbarDropdown:hover {
   box-shadow: 0 0 0 2px $clr-text-secondary;
+}
+
+h6 {
+  font-size: large;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0px 50px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(50, end),
+    blink-caret .9s step-end infinite;
+  animation-duration: 2s;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
