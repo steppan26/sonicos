@@ -31,9 +31,9 @@
   </p>
 
   <% if policy(@costume).edit? %>
-  <div style = "background-color: white, box-radius: 10px", class = "p-3">
-    <%= render "new_edit" ,costume: @costume%>
-   </div>
+    <div style = "background-color: white, box-radius: 10px", class = "p-3">
+      <%= render "new_edit" ,costume: @costume%>
+    </div>
   <% elsif Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == current_user.id } %>
     <h3>You have put an offer on this costume !</h3>
   <% else%>
