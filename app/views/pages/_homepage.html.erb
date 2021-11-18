@@ -5,9 +5,9 @@
     <% else %>
       <% @my_costumes.each do |costume| %>
         <li>
-          <%= link_to costume_path(costume) do %>
+          <%# <%= link_to costume_path(costume) do %>
             <%= render '/costumes/card_ring', costume: costume %>
-          <% end %>
+          <%# <% end %>
         </li>
       <% end %>
     <% end %>

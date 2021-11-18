@@ -1,7 +1,8 @@
-<div class="card-custom-ring">
+<div class="card-custom-ring" data-controller="modal" data-action="click->modal#openModal">
   <div class="card-image" style="background-image: url(<%= cl_image_path costume.photos.first.key, crop: :fit %>)">
     <h4 class="card-costume-title"><%= costume.title.upcase %></h4>
   </div>
   <%# The '%.2f' ensures that the number returned always has 2 decimal places (important for displaying currency) %>
     <h6 class="costume-price"><%= '%.2f' % costume.price %>€</h6>
+    <%= render 'costumes/show_costume', costume: costume %>
 </div>
