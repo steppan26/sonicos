@@ -37,9 +37,6 @@
         <%= link_to 'Delete my offer', offer_path(offer.id), method: :delete, data: { confirm: "Are you sure?" } %>
         <br>
       <% else%>
-        <div style = "background-color: white", class = "p-3">
-          <%= link_to "Back", "/dashboard" %>
-        </div>
         <div class="content-form">
           <h2>Is it to your tastes?</h2>
           <p>You can rent it</p>
@@ -49,7 +46,9 @@
       <% if policy(@costume).destroy? %>
         <%= link_to 'Delete', costume_path(@costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
       <% end %>
-      <%= link_to "Back", "/dashboard" %>
+      <div style = "background-color: white", class = "p-3">
+        <%= link_to "Back", "/dashboard" %>
+      </div>
     </div>
   </div>
 </div>

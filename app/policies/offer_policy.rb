@@ -8,4 +8,10 @@ class OfferPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def destroy?
+    if user == record.user
+      true
+    end
+  end
 end

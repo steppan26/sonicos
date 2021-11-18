@@ -32,10 +32,11 @@ class OffersController < ApplicationController
   end
 
   def destroy
-    @costume = Costume.find(params[:costume_id])
-    @user = current_user
-    @offer = Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == @user.id }
+    @offer = Offer.find(params[:id])
+    @costume = Costume.find(@offer.costume_id)
     @offer.destroy
+    authorize @offer
+    redirect_to costume_path(@costume)
   end
 
   private
