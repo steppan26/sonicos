@@ -1,9 +1,11 @@
-<div class="container">
-    <div class="map-container" style="border: solid black; border-radius: 8px;">
-      <%= render "map" ,markers: @markers %>
-    </div>
+<div class="index-display" data-controller="indexpage">
+  <div class="costumes-container">
+    <div class="index-header">
       <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE PARIS</h5>
-    <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
+      <div class="d-flex flex-row-reverse">
+        <button class="filter-btn p-2">Availibility</button>
+        <button class="filter-btn p-2">By price</button>
+        <button class="filter-btn p-2">Filter</button>
       </div>
     </div>
     <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>

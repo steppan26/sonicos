@@ -8,4 +8,9 @@ class Costume < ApplicationRecord
   validates :title, :price, :location, presence: true
   validates :title, length: { minimum: 5, maximum: 60 }
   validates :price, numericality: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_location,
+                  against: [:location],
+                  using: { tsearch: { prefix: true } }
 end
