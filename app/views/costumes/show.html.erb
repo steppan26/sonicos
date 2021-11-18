@@ -35,7 +35,11 @@
         <% else %>
           <% offers.each do |offer| %>
             <%= "You have recieved an offer from" %>
-            <%= User.find(offer.user_id).username %> |
+            <%= User.find(offer.user_id).username %> (<%= offer.status %>)
+            <% if offer.status == "pending" %>
+              | <%= link_to 'Accept',  accept_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
+            <% end %>
+            <br>
           <% end %>
         <% end %>
         <div style = "background-color: white, box-radius: 10px", class = "p-3">

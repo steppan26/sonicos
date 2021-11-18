@@ -31,6 +31,21 @@ class OffersController < ApplicationController
     end
   end
 
+  def accept
+    @offer = Offer.find(params[:id])
+    @offers_all = Offer.where( costume_id: @offer.costume_id )
+    @costume = Costume.find(@offer.costume_id)
+    @offers_all.each do |offer|
+      offer.status = "rejected"
+      offer.save
+    end
+    @offer.status = "accepted"
+    @offer.save
+    authorize @offer
+
+    redirect_to costume_path(@costume)
+  end
+
   def destroy
     @offer = Offer.find(params[:id])
     @costume = Costume.find(@offer.costume_id)
