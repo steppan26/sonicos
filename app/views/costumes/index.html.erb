@@ -4,9 +4,13 @@
     <button class="filter-btn p-2">By price</button>
     <button class="filter-btn p-2">Filter</button>
   </div>
-      <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE PARIS</h5>
-    <div class="map-container">
-      <%= render "map" ,markers: @markers %>
+    <h5 class="index-titles mr-6">TOUS LES SONICS PRES DE PARIS</h5>
+    <div class="row">
+      <div class="col-7">
+        <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
+      </div>
+      <div class="map-container col-5">
+        <%= render "map" ,markers: @markers %>
+      </div>
     </div>
-    <%= render 'search-costumes', costumes: @costumes, class:"card-custom" %>
 </div>
