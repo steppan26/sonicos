@@ -1,0 +1,48 @@
+.btn-custom-primary {
+  border-radius: 0.5em;
+  background-color: $clr-text-secondary;
+  border: 2px solid $clr-bakground-primary-accent;
+  transition: all 210ms ease-out;
+}
+
+.btn-custom-primary:hover {
+  background-color: $clr-bakground-primary-accent;
+  border: 2px solid $clr-text-secondary;
+  border-radius: 0px 33px 33px 0px;
+}
+
+.btn-custom-action {
+
+}
+
+.btn-custom-action:hover {
+  // animation-name: spin;
+  // animation-duration: 0.6s;
+  // border-radius: 0.3em;
+  // transform: translate(0.5em);
+  // border-left-width: 0.5em;
+}
+
+// @keyframes spin {
+//   0% {
+//     transform: rotate(0);
+//   }
+//   33% {
+//     transform :rotate(360deg);
+//   }
+//   66% {
+//     transform :rotate(720deg);
+//   }
+//   100% {
+//     transform :rotate(1080deg);
+//   }
+// }
+
+.filter-btn {
+background: #FEFEFE;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 20px;
+font: roboto;
+font-weight: lighter;
+}

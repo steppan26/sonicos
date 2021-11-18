@@ -15,4 +15,7 @@ class PagesController < ApplicationController
       @my_costumes_offers << Costume.find(offer.costume_id)
     end
   end
+
+  def test
+  end
 end

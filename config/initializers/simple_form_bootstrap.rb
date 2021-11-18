@@ -290,7 +290,6 @@ SimpleForm.setup do |config|
     end
   end
 
-
   # bootstrap custom forms
   #
   # custom input switch for boolean
