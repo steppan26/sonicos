@@ -5,11 +5,6 @@
       <%= render 'costumes/display_costume', costume: costume %>
       <div class="costume-options">
         <div class="map-container">
-          <% unless policy(costume).edit? %>
-            <div class="show-map">
-              <%= render "costumes/map" ,markers: @markers %>
-            </div>
-          <% end %>
         </div>
           <div class="costume-menu" data-controller="ownerTab">
             <% if policy(costume).edit? %>
@@ -36,6 +31,8 @@
               <div class="content-form">
                 <h2>Is it to your tastes?</h2>
                 <p>You can rent it</p>
+                <% offer = Offer.new %>
+                <%= render "/offers/new.html.erb", costume: costume, offer: offer %>
               </div>
             <% end %>
           </div>
