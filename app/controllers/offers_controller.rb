@@ -25,7 +25,7 @@ class OffersController < ApplicationController
     authorize @offer
     if @offer.save
       @offer.save
-      redirect_to costume_path(@costume)
+      redirect_to dashboard_path
     else
       render "costumes/show"
     end
