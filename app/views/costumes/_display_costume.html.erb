@@ -1,0 +1,17 @@
+<div class="costume-info">
+  <h1><%= costume.title %></h1>
+  <% if costume.photos.attached? %>
+    <%= render 'costumes/carousel', costume: costume %>
+  <% else %>
+    <img src="<%= costume.image_url%>" alt="<% costume.title %>">
+  <% end %>
+  <div class="show-info">
+    <p><%= costume.description %></p>
+    <h2><strong>Location: </strong><span><%= costume.location %></span></h2>
+    <h3><strong>Owner: </strong><%= costume.user.username.capitalize %></h3>
+    <% if policy(costume).destroy? %>
+      <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
+    <% end %>
+    <%= link_to "Back", "/dashboard" %>
+  </div>
+</div>
