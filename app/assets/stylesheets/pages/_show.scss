@@ -4,7 +4,7 @@
 
 .costume-info {
   flex: 1 0 60%;
-  max-width: 60% ;
+  max-width: 61% ;
   color: $clr-text-secondary;
   height: 100%;
   padding: 1em;
@@ -91,7 +91,7 @@
 .costume-options {
   position: relative;
   color: $clr-bakground-secondary;
-  background-color: rgba($color: $clr-text-secondary, $alpha: 0);
+  background-color: rgba($color: $clr-text-secondary, $alpha: 1);
   flex: 0 1 40%;
   height: 100%;
   width: 100%;
