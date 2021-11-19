@@ -1,17 +1,34 @@
 <div class="costume-info">
-  <h1><%= costume.title %></h1>
-  <% if costume.photos.attached? %>
-    <%= render 'costumes/carousel', costume: costume %>
-  <% else %>
-    <img src="<%= costume.image_url%>" alt="<% costume.title %>">
-  <% end %>
-  <div class="show-info">
-    <p><%= costume.description %></p>
-    <h2><strong>Location: </strong><span><%= costume.location %></span></h2>
-    <h3><strong>Owner: </strong><%= costume.user.username.capitalize %></h3>
-    <% if policy(costume).destroy? %>
-      <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
-    <% end %>
-    <%= link_to "Back", "/dashboard" %>
+  <div class="show-info-body">
+    <div class="images-container">
+      <div class="images-list">
+        <% costume.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, crop: :fit, class: "image-list-single" %>
+        <% end %>
+      </div>
+      <%= render 'costumes/carousel', costume: costume %>
+    </div>
+    <div class="show-info">
+      <div>
+        <h2 class="show-info-header"><%= costume.title.upcase %></h2>
+        <div class="description-wrapper">
+          <h5><strong>About this costume</strong></h5>
+          <p class="show-info-description"><%= costume.description %></p>
+        </div>
+      </div>
+      <div class="show-info-details">
+        <h3><strong>Price per day</strong></h3>
+        <p><%= '%.2f' % costume.price %>€</p>
+        <h3><strong>Location</strong></h3>
+        <p><%= costume.location %></p>
+        <h3><strong>Owned by</strong></h3>
+        <p><%= costume.user.username.capitalize %></p>
+        <h5 class="costume-status">Available</h5>
+      </div>
+      <%# <% if policy(costume).destroy? %>
+        <%# <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%# end %>
+      <%# <%= link_to "Back", "/dashboard" %>
+    </div>
   </div>
 </div>

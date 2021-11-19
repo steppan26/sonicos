@@ -3,17 +3,15 @@
     <div class="carousel-inner">
       <% costume.photos.each do |photo| %>
         <div class="carousel-item" data-show-target="item">
-          <%= cl_image_tag photo.key, width: 150, height: 200, crop: :fit, class: "d-block w-100" %>
+          <%= cl_image_tag photo.key, crop: :fit, class: "d-block w-100" %>
         </div>
       <% end %>
     </div>
-    <div class="carousel-control-prev" role="button" data-slide="prev" data-action="click->show#previous">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
+    <div class="carousel-control carousel-control-prev" role="button" data-slide="prev" data-action="click->show#previous">
+      <i class="fas fa-chevron-circle-left"></i>
     </div>
-    <div class="carousel-control-next" role="button" data-slide="next" data-action="click->show#next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
+    <div class="carousel-control carousel-control-next" role="button" data-slide="next" data-action="click->show#next">
+      <i class="fas fa-chevron-circle-right"></i>
     </div>
   </div>
 </div>

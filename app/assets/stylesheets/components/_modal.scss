@@ -20,7 +20,7 @@
   margin: auto;
   width: 0;
   height: 0;
-  background-color: $clr-bakground-primary;
+  background-color: rgba($color: $clr-bakground-primary, $alpha: 1);
   overflow: hidden;
   border-radius: 0.5em;
   border: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
@@ -36,6 +36,7 @@
 .modal-custom-content {
   display: flex;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 .modal-close {
