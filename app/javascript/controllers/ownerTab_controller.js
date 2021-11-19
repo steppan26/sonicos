@@ -15,5 +15,12 @@ export default class extends Controller {
         tabPage.classList.add('hidden');
       }
     });
+    this.tabTargets.forEach(tab => {
+      if (tab === event.currentTarget) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    })
   }
 }
