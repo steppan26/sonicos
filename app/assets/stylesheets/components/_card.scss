@@ -212,7 +212,7 @@
   background-color: #e60f0f;
 }
 
-.unavailable-label-container {
+.pending-label-container {
   display: inline-block;
   padding: 5px 15px;
   border-radius: 40px;
@@ -221,6 +221,7 @@
 
 .available-label-text {
     display: inline-block;
+    text-decoration: none;
     color: #fff;
     font-size: 1em;
     line-height: 1em;

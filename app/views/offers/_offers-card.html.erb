@@ -13,13 +13,15 @@
           </div>
           <% if offer.status == "accepted" %>
             <div class="available-label-container">
-              <div class="available-label-text">accepted</div>
-              <%= link_to 'Cancel',  cancel_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
+              <div class="available-label-text">
+                <%= link_to 'accepted',  cancel_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" }, style: 'color: white;' %>
+              </div>
             </div>
           <% elsif offer.status == "pending" %>
             <div class="pending-label-container">
-              <div class="available-label-text">pending</div>
-              <%= link_to 'Accept',  accept_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
+              <div class="available-label-text">
+                <%= link_to 'pending',  accept_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" }, style: 'color: white;' %>
+              </div>
             </div>
           <% else %>
             <div class="unavailable-label-container">
