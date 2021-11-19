@@ -7,9 +7,35 @@
 }
 
 .costume-options {
+  position: relative;
+  color: $clr-bakground-secondary;
+  background-color: rgba($color: $clr-text-secondary, $alpha: 1);
   flex: 0 1 40%;
-  height: 100%;
+  height: 80%;
   width: 100%;
+  padding-top: 2em;
+}
+
+.owner-tabs-wrapper {
+  position: absolute;
+  display: flex;
+  top: -0.5em;
+  width: 100%;
+}
+
+.owner-tab{
+  text-align: center;
+  flex: 0 0 50%;
+  color: $clr-bakground-secondary;
+  background-color: rgba($color: $clr-text-secondary, $alpha: 1);
+  padding: 0.5em 1em;
+  border-radius: 0.3em 0.3em 0 0;
+  width: 100%;
+}
+
+.owner-tab.active {
+  transform: translateY(-0.5em);
+  font-weight: 700;
 }
 
 .modal .map-container {

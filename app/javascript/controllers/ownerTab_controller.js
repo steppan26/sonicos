@@ -10,10 +10,17 @@ export default class extends Controller {
   changeTab(event) {
     this.tabPageTargets.forEach(tabPage => {
       if (event.currentTarget.dataset.tabPage === tabPage.id) {
-        tabPage.classList.add('hidden');
-      } else {
         tabPage.classList.remove('hidden');
+      } else {
+        tabPage.classList.add('hidden');
       }
     });
+    this.tabTargets.forEach(tab => {
+      if (tab === event.currentTarget) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    })
   }
 }
