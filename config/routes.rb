@@ -12,5 +12,5 @@ Rails.application.routes.draw do
       post "cancel"
     end
   end
-  get "/test1", to: "pages#test1"
+  get "/test", to: "pages#test"
 end

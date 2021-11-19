@@ -16,7 +16,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def test1
+  def test
     @active_tab = params[:page] || "homepage"
     @my_costumes = Costume.where(user: current_user)
     @costumes = Costume.all
