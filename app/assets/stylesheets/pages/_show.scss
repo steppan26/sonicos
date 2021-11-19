@@ -4,21 +4,25 @@
 
 .costume-info {
   flex: 1 0 60%;
+  color: $clr-text-secondary;
 }
 
 .costume-options {
   position: relative;
-  color: $clr-bakground-secondary;
-  background-color: rgba($color: $clr-text-secondary, $alpha: 1);
   flex: 0 1 40%;
   height: 80%;
   width: 100%;
-  padding-top: 2em;
+}
+
+.options-wrapper {
+  background-color: rgba($color: $clr-bakground-secondary, $alpha: 0.8);
+  border: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
+  border-top: none;
 }
 
 .owner-tabs-wrapper {
-  position: absolute;
   display: flex;
+  align-items: flex-end;
   top: -0.5em;
   width: 100%;
 }
@@ -26,16 +30,19 @@
 .owner-tab{
   text-align: center;
   flex: 0 0 50%;
-  color: $clr-bakground-secondary;
-  background-color: rgba($color: $clr-text-secondary, $alpha: 1);
+  background-color: rgba($color: $clr-bakground-secondary, $alpha: 0.8);
   padding: 0.5em 1em;
   border-radius: 0.3em 0.3em 0 0;
   width: 100%;
+  margin: 0;
+  border-bottom: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
 }
 
 .owner-tab.active {
-  transform: translateY(-0.5em);
+  border: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
+  border-bottom: none;
   font-weight: 700;
+  padding-bottom: 1em;
 }
 
 .modal .map-container {
