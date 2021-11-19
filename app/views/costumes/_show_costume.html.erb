@@ -15,8 +15,8 @@
             <% if policy(costume).edit? %>
               <div class="options-wrapper" data-controller="ownerTab">
                 <div class="owner-tabs-wrapper">
-                  <div class="owner-tab" data-ownerTab-target='tab' data-action="click->ownerTab#changeTab" data-tab-page='offers' >See Offers</div>
-                  <div class="owner-tab" data-ownerTab-target='tab' data-action="click->ownerTab#changeTab" data-tab-page='edit' >Edit Costume</div>
+                  <p class="owner-tab active" data-ownerTab-target='tab' data-action="click->ownerTab#changeTab" data-tab-page='offers' >Offers received</p>
+                  <p class="owner-tab" data-ownerTab-target='tab' data-action="click->ownerTab#changeTab" data-tab-page='edit' >Edit Costume</p>
                 </div>
                 <div id="offers" data-ownerTab-target="tabPage">
                   <%= render 'costumes/owner_options', costume: costume %>

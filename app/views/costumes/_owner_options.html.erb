@@ -1,5 +1,4 @@
-<h3>Offers</h3>
-<% offers = Offer.where( costume_id: params[:id]) %>
+<% offers = Offer.where( costume_id: costume.id) %>
 <% if offers.empty? %>
   <p>You haven't recieved any offers on this costume.</p>
 <% else %>
