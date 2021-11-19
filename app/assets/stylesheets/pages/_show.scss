@@ -4,6 +4,92 @@
 
 .costume-info {
   flex: 1 0 60%;
+  max-width: 60% ;
+  color: $clr-text-secondary;
+  height: 100%;
+  padding: 1em;
+}
+
+.show-info-header {
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.show-info-description {
+  width: 100%;
+}
+
+.description-wrapper {
+  margin-top: 3em;
+}
+
+.show-info-body {
+  display: flex;
+  flex-flow: row nowrap;
+  color: $clr-bakground-primary-accent;
+  padding: 1em;
+  height: 100%;
+}
+
+.show-info {
+  flex: 1 0 60%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.show-info-details {
+  border: 1px dashed rgba($color: $clr-bakground-secondary, $alpha: 0.5);
+  padding: 0.5em 0.5em 0 0.5em;
+  height: max-content;
+}
+
+.show-info-details h3 {
+  font-size: 1.2em;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.show-info-details p {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.costume-status {
+  color: green;
+}
+
+.images-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  height: max-content;
+  flex: 0 0 40%;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 0.3em;
+  margin-right: 1em;
+  border: 2px solid rgba($color: $clr-bakground-secondary, $alpha: 0.6);
+}
+
+.images-list {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+.image-list-single {
+  flex: 0 1 25%;
+  height: 10vh;
+}
+
+.carousel-container img {
+  width: 100%;
+}
+
+.costume-menu {
+  background-color: rgba($color: $clr-bakground-secondary, $alpha: 0.8);
+  border-radius: 0.3em 0.3em 0 0;
 }
 
 .costume-options {
@@ -13,12 +99,16 @@
   flex: 0 1 40%;
   height: 80%;
   width: 100%;
-  padding-top: 2em;
+}
+
+.options-wrapper {
+  border: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
+  border-top: none;
 }
 
 .owner-tabs-wrapper {
-  position: absolute;
   display: flex;
+  align-items: flex-end;
   top: -0.5em;
   width: 100%;
 }
@@ -26,16 +116,19 @@
 .owner-tab{
   text-align: center;
   flex: 0 0 50%;
-  color: $clr-bakground-secondary;
-  background-color: rgba($color: $clr-text-secondary, $alpha: 1);
+  //background-color: rgba($color: $clr-bakground-secondary, $alpha: 0.8);
   padding: 0.5em 1em;
   border-radius: 0.3em 0.3em 0 0;
   width: 100%;
+  margin: 0;
+  border-bottom: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
 }
 
 .owner-tab.active {
-  transform: translateY(-0.5em);
+  border: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
+  border-bottom: none;
   font-weight: 700;
+  padding-bottom: 1em;
 }
 
 .modal .map-container {

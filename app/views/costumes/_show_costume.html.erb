@@ -11,13 +11,13 @@
             </div>
           <% end %>
         </div>
-          <div class="costume-menu">
+          <div class="costume-menu" data-controller="ownerTab">
             <% if policy(costume).edit? %>
-              <div class="options-wrapper" data-controller="ownerTab">
                 <div class="owner-tabs-wrapper">
                   <p class="owner-tab active" data-ownerTab-target='tab' data-action="click->ownerTab#changeTab" data-tab-page='offers' >Offers received</p>
                   <p class="owner-tab" data-ownerTab-target='tab' data-action="click->ownerTab#changeTab" data-tab-page='edit' >Edit Costume</p>
                 </div>
+              <div class="options-wrapper">
                 <div id="offers" data-ownerTab-target="tabPage">
                   <%= render 'costumes/owner_options', costume: costume %>
                 </div>
