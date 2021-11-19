@@ -53,7 +53,7 @@ class CostumesController < ApplicationController
     @costume.update(costume_params)
     authorize @costume
 
-    redirect_to costume_path(@costume)
+    redirect_to dashboard_path
   end
 
   def destroy
