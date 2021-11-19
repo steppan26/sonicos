@@ -1,20 +1,76 @@
-<div class="modal-wrapper" data-controller="modal" data-modal-target="container" >
-  <div class="modal-custom" id="show-page" data-modal-target="modal">
-    <div class="modal-close" data-action="click->modal#closeModal"><i class="far fa-times-circle"></i></div>
-    <div class="modal-custom-content">
-      <%= render 'costumes/display_costume', costume: @costume%>
-      <div class="costume-options">
-        <div class="map-container">
-          <% unless policy(@costume).edit? %>
-            <div class="show-map">
-              <%= render "map", markers: @markers %>
+<<<<<<< HEAD
+<div class="container">
+  <div class="row show-row">
+    <div class="content-wrapper col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <div class="content-info">
+        <h1><%= @costume.title %></h1>
+        <div class="d-flex p-2 m-2 photo-box">
+          <div>
+            <%= cl_image_tag @costume.photos.first.key, width: 300, height: 350, crop: :fit%>
+          </div>
+          <div class="row m-3">
+              <% @costume.photos.each do |photo| %>
+                <div class="col-6 m-2">
+                  <%= cl_image_tag photo.key, width: 150, height: 200, crop: :fit %>
+                </div>
+              <% end %>
             </div>
+          </div>
+          <h2>Description</h2>
+          <p><%= @costume.description %></p>
+          <h2>Availibility</h2>
+          <p>This costume is available at <strong><%= @costume.location %></strong> for the modic sum of <strong><%= @costume.price %></strong>€</p>
+          <h3>Owner</h3>
+          <p>This beautifull costume is brought to you by <strong><%= @costume.user.username.capitalize %></strong>.
+            <br>
+            To contact this person of great taste, try sending them a mail at : <span style="color:blue"><u><strong><%= @costume.user.email %></strong></u></span>!
+          </p>
+          <% if policy(@costume).destroy? %>
+            <%= link_to 'Delete', costume_path(@costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
           <% end %>
-        </div>
-          <div class="costume-menu">
-            <% if policy(@costume).edit? %>
-              <%= render 'costume/owner_costume', costume: @costumes %>
+            <%= link_to "Back", "/dashboard" %>
+      </div>
+    </div>
+    <div class="map-container-show col-xs-3 col-sm-3 col-md-3 col-lg-3" >
+      <div class="form border p-2">
+        <% if policy(@costume).edit? %>
+              <h3>Offers</h3>
+              <% offers = Offer.where( costume_id: params[:id]) %>
+              <% if offers.empty? %>
+                <p>You haven't recieved any offers on this costume.</p>
+              <% else %>
+                <% offers.each do |offer| %>
+                  <%= "You have recieved an offer from" %>
+                  <%= User.find(offer.user_id).username %> (<%= offer.status %>)
+                  <% if offer.status == "pending" %>
+                    | <%= link_to 'Accept',  accept_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
+                  <% elsif offer.status == "accepted" %>
+                    <%= link_to 'Cancel',  cancel_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
+                  <% end %>
+                  <br>
+                  <p>From <%= offer.date_of_hire %> to <%= offer.date_of_end %></p>
+                <% end %>
+              <% end %>
+              </div>
+              <div class="form border p-3">
+                <%= render "new_edit" ,costume: @costume%>
+              </div>
+            <% elsif Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == current_user.id } %>
+              <% offer = Offer.find { |offer| offer.costume_id == @costume.id && offer.user_id == current_user.id } %>
+              <h3>You have put an offer on this costume !</h3>
+              <%= link_to 'Delete my offer', offer_path(offer.id), method: :delete, data: { confirm: "Are you sure?" } %>
+              <br>
+            <% elsif Offer.find { |offer| offer.costume_id == @costume.id && offer.status == "accepted" } %>
+              <p>This costume is not available</p>
+            <% else%>
+                <h2>Is it to your tastes?</h2>
+                <p>You can rent it</p>
+                <%= render "/offers/new.html.erb", costume: @costume, offer: @offer %>
             <% end %>
+          </div>
+        <% if !policy(@costume).edit? %>
+          <div class="show-map">
+            <%= render "map" ,markers: @markers %>
           </div>
       </div>
     </div>

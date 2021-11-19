@@ -21,8 +21,25 @@
 }
 
 .content-form {
-  position: sticky;
-  top: 20vh;
   margin-top: 5em;
-  flex: 0 1 40%
+  flex: 0 1 40%;
+}
+
+.form {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 30px
+}
+
+.map-container-show {
+  padding: 200px auto;
+  z-index: auto;
+}
+
+.photo-box {
+  align-items: center;
+}
+
+.show-row {
+  justify-content: space-between;
 }
