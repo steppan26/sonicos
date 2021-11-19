@@ -37,7 +37,7 @@ class CostumesController < ApplicationController
     @costume.user_id = current_user.id
     authorize @costume
     if @costume.save
-      redirect_to costume_path(@costume)
+      redirect_to dashboard_path
     else
       redirect_to controller: 'pages', action: 'dashboard', page: 'new'
     end

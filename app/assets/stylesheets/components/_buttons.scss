@@ -11,9 +11,6 @@
   border-radius: 0px 33px 33px 0px;
 }
 
-.btn-custom-action {
-
-}
 
 .filter-btn {
 background: #FEFEFE;
@@ -28,13 +25,14 @@ font-weight: lighter;
   position:relative;
   display:inline-block;
   margin:20px;
+  padding: 0px;
 }
 
 .button-fast .button{
   color:white;
   font-family:Helvetica, sans-serif;
   font-weight:bold;
-  font-size:36px;
+  font-size:30px;
   text-align: center;
   text-decoration:none;
   background-color:#FFA12B;
