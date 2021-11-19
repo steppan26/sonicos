@@ -80,3 +80,23 @@ width: 95%;
   list-style: none;
   padding: 0;
 }
+
+.costume-info{
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+
+.show-info {
+  color: black;
+  font-size: bolder;
+  margin-left: 30px;
+}
+
+.costume-photos {
+  object-fit: contain;
+}

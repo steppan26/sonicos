@@ -3,3 +3,9 @@
 @import "home";
 @import "search";
 @import "show";
+
+.map-container-index {
+  z-index: auto;
+  width: 50%;
+  height: 500px;
+}

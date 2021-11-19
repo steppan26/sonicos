@@ -3,7 +3,7 @@
     <div class="carousel-inner">
       <% costume.photos.each do |photo| %>
         <div class="carousel-item" data-show-target="item">
-          <%= cl_image_tag photo.key, crop: :fit, class: "d-block w-100" %>
+          <%= cl_image_tag photo.key, crop: :fit, class: "d-block carousel-photo" %>
         </div>
       <% end %>
     </div>
