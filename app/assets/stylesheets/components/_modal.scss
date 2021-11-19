@@ -16,11 +16,11 @@
 .modal-custom {
   z-index: 999;
   position: relative;
-  padding: 1.5em;
+  // padding: 1em;
   margin: auto;
   width: 0;
   height: 0;
-  background-color: $clr-bakground-primary;
+  background-color: rgba($color: $clr-bakground-primary, $alpha: 1);
   overflow: hidden;
   border-radius: 0.5em;
   border: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
@@ -36,6 +36,7 @@
 .modal-custom-content {
   display: flex;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 .modal-close {
@@ -46,7 +47,7 @@
   position: absolute;
   top: -0.5em;
   right: -0.3em;
-  color: $clr-bakground-secondary;
+  color: $clr-text-secondary;
 }
 
 .modal-close:hover {

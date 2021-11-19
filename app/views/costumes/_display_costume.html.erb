@@ -1,37 +1,34 @@
 <div class="costume-info">
-  <div class="costume-photos">
-    <%= render 'costumes/carousel', costume: costume %>
-    <div class="row ">
-      <% costume.photos.each do |photo| %>
-        <div class="col-4 m-2">
-          <%= cl_image_tag photo.key, class: "costume-photos", height: 100, width: 100, crop: :fit %>
+  <div class="show-info-body">
+    <div class="images-container">
+      <div class="images-list">
+        <% costume.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, crop: :fit, class: "image-list-single" %>
+        <% end %>
+      </div>
+      <%= render 'costumes/carousel', costume: costume %>
+    </div>
+    <div class="show-info">
+      <div>
+        <h2 class="show-info-header"><%= costume.title.upcase %></h2>
+        <div class="description-wrapper">
+          <h5><strong>About this costume</strong></h5>
+          <p class="show-info-description"><%= costume.description %></p>
         </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="show-info py-2 my-2">
-    <h2><%= costume.title %></h2>
-    <p><%= costume.description %></p>
-    <h6><strong>Location: </strong><span><%= costume.location %></span></h6>
-    <h6><strong>Owner: </strong><%= costume.user.username.capitalize %></h6>
-
-    <div class="paid-label-container">
-      <div class="free-label-text"><%= costume.price %>€</div>
-    </div>
-    <% if Offer.where( costume_id: costume.id, status: "accepted" ).empty? %>
-      <div class="available-label-container">
-        <div class="available-label-text">available</div>
       </div>
-    <% else %>
-      <div class="unavailable-label-container">
-        <div class="available-label-text">unavailable</div>
+      <div class="show-info-details">
+        <h3><strong>Price per day</strong></h3>
+        <p><%= '%.2f' % costume.price %>€</p>
+        <h3><strong>Location</strong></h3>
+        <p><%= costume.location %></p>
+        <h3><strong>Owned by</strong></h3>
+        <p><%= costume.user.username.capitalize %></p>
+        <h5 class="costume-status">Available</h5>
       </div>
-    <% end %>
-    <div class="_10px-divider"></div>
-     <% if policy(costume).destroy? %>
-      <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
-    <% end %>
-    <%= link_to "Back", "/dashboard" %>
+      <%# <% if policy(costume).destroy? %>
+        <%# <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%# end %>
+      <%# <%= link_to "Back", "/dashboard" %>
+    </div>
   </div>
 </div>
