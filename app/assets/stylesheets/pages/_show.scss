@@ -36,12 +36,13 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  height: 100%;
 }
 
 .show-info-details {
   border: 1px dashed rgba($color: $clr-bakground-secondary, $alpha: 0.5);
   padding: 0.5em 0.5em 0 0.5em;
-  height: max-content;
+  border-radius: 0.2em;
 }
 
 .show-info-details h3 {
@@ -87,23 +88,25 @@
   width: 100%;
 }
 
-.costume-menu {
-  background-color: rgba($color: $clr-bakground-secondary, $alpha: 0.8);
-  border-radius: 0.3em 0.3em 0 0;
-}
-
 .costume-options {
   position: relative;
   color: $clr-bakground-secondary;
   background-color: rgba($color: $clr-text-secondary, $alpha: 0);
   flex: 0 1 40%;
-  height: 80%;
+  height: 100%;
   width: 100%;
+  background-color: rgba($color: $clr-bakground-secondary, $alpha: 0.8);
+}
+
+.costume-menu {
+  height: 100%;
 }
 
 .options-wrapper {
+  //background-color: rgba($color: $clr-bakground-secondary, $alpha: 0.8);
   border: 2px solid rgba($color: $clr-text-secondary, $alpha: 0.8);
   border-top: none;
+  height: 100%;
 }
 
 .owner-tabs-wrapper {
