@@ -2,23 +2,7 @@
   <div class="modal-custom" id="show-page" data-modal-target="modal">
     <div class="modal-close" data-action="click->modal#closeModal"><i class="far fa-times-circle"></i></div>
     <div class="modal-custom-content">
-      <div class="costume-info">
-        <h1><%= costume.title %></h1>
-        <% if costume.photos.attached? %>
-          <%= render 'costumes/carousel', costume: costume %>
-        <% else %>
-          <img src="<%= costume.image_url%>" alt="<% costume.title %>">
-        <% end %>
-        <div class="show-info">
-          <p><%= costume.description %></p>
-          <h2><strong>Location: </strong><span><%= costume.location %></span></h2>
-          <h3><strong>Owner: </strong><%= costume.user.username.capitalize %></h3>
-          <% if policy(costume).destroy? %>
-            <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
-          <% end %>
-          <%= link_to "Back", "/dashboard" %>
-        </div>
-      </div>
+      <%= render 'costumes/display_costume', costume: costume %>
       <div class="costume-options">
         <div class="map-container">
           <% unless policy(costume).edit? %>
@@ -29,26 +13,7 @@
         </div>
           <div class="costume-menu">
             <% if policy(costume).edit? %>
-              <h3>Offers</h3>
-              <% offers = Offer.where( costume_id: params[:id]) %>
-              <% if offers.empty? %>
-                <p>You haven't recieved any offers on this costume.</p>
-              <% else %>
-                <% offers.each do |offer| %>
-                  <%= "You have recieved an offer from" %>
-                  <%= User.find(offer.user_id).username %> (<%= offer.status %>)
-                  <% if offer.status == "pending" %>
-                    | <%= link_to 'Accept',  accept_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
-                  <% elsif offer.status == "accepted" %>
-                    <%= link_to 'Cancel',  cancel_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" } %>
-                  <% end %>
-                  <br>
-                  <p>From <%= offer.date_of_hire %> to <%= offer.date_of_end %></p>
-                <% end %>
-              <% end %>
-              <div style = "background-color: white, box-radius: 10px", class = "p-3">
-                <%= render "costumes/new_edit" ,costume: costume%>
-              </div>
+              <%= render 'costumes/owner_options', costume: costume %>
             <% elsif Offer.find { |offer| offer.costume_id == costume.id && offer.user_id == current_user.id } %>
               <% offer = Offer.find { |offer| offer.costume_id == costume.id && offer.user_id == current_user.id } %>
               <h3>You have put an offer on this costume !</h3>
