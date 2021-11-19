@@ -1,0 +1,37 @@
+<div class="costume-info">
+  <div class="costume-photos">
+    <%= render 'costumes/carousel', costume: costume %>
+    <div class="row ">
+      <% costume.photos.each do |photo| %>
+        <div class="col-4 m-2">
+          <%= cl_image_tag photo.key, width: 150, height: 200, crop: :fit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="show-info">
+    <h2><%= costume.title %></h2>
+    <p><%= costume.description %></p>
+    <h5><strong>Location: </strong><span><%= costume.location %></span></h5>
+    <h6><strong>Owner: </strong><%= costume.user.username.capitalize %></h6>
+
+    <div class="paid-label-container">
+      <div class="free-label-text"><%= costume.price %>€</div>
+    </div>
+    <% if Offer.where( costume_id: costume.id, status: "accepted" ).empty? %>
+      <div class="available-label-container">
+        <div class="available-label-text">available</div>
+      </div>
+    <% else %>
+      <div class="unavailable-label-container">
+        <div class="available-label-text">unavailable</div>
+      </div>
+    <% end %>
+    <div class="_10px-divider"></div>
+     <% if policy(costume).destroy? %>
+      <%= link_to 'Delete', costume_path(costume.id), method: :delete, data: { confirm: "Are you sure?" } %> |
+    <% end %>
+    <%= link_to "Back", "/dashboard" %>
+  </div>
+</div>

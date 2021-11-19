@@ -17,7 +17,6 @@
 }
 
 .map-container {
-  position: sticky;
   flex: 1 1 45vw;
   top: 10vh;
   bottom: 10vh;
@@ -29,4 +28,3 @@
 .map-container.reduce {
   flex: 0 1 0vw !important;
 }
-

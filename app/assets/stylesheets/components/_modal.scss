@@ -1,0 +1,51 @@
+.modal-wrapper {
+  visibility: hidden;
+  opacity: 1;
+  z-index: 990;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 10, 10, 0.6);
+}
+
+.modal-custom {
+  z-index: 999;
+  position: relative;
+  padding: 1.5em;
+  margin: auto;
+  width: 0;
+  height: 0;
+  background-color: $clr-text-secondary;
+  overflow: scroll;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 20px rgba($color: $clr-bakground-secondary, $alpha: 0.4);
+  transition: height 130ms ease-out, width 130ms ease-in;
+}
+
+.modal-custom.open {
+  height: 75vh;
+  width: 75vw;
+}
+
+.modal-close {
+  opacity: 0.4;
+  font-size: 1.5em;
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  color: $clr-bakground-secondary;
+}
+
+.modal-close:hover {
+  opacity: 0.8;
+}
+
+.modal-custom-content {
+  display: flex;
+  flex-wrap: nowrap;
+}

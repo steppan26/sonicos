@@ -1,6 +1,20 @@
 .content-wrapper {
-  display: flex;
   position: relative;
+}
+
+.costume-info {
+  flex: 1 0 60%;
+}
+
+.costume-options {
+  flex: 0 1 40%;
+  border: 3px solid $clr-bakground-secondary;
+  height: 100%;
+  width: 100%;
+}
+
+.modal .map-container {
+  flex: none;
 }
 
 .content-info {

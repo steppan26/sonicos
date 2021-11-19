@@ -10,7 +10,7 @@
   align-items: flex-start;
   width: max-content;
   z-index: 4;
-  position: fixed;
+  position: relative;
 }
 
 .dashboard-wrapper {
@@ -79,4 +79,14 @@ width: 95%;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
+}
+
+.costume-info{
+  display: flex;
+}
+
+.show-info {
+  color: black;
+  font-size: bolder;
+  margin-left: 30px;
 }
