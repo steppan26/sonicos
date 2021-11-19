@@ -1,0 +1,45 @@
+<div class="modal-wrapper" data-controller="modal" data-modal-target="container" >
+  <div class="modal-custom" id="show-page" data-modal-target="modal">
+    <div class="modal-close" data-action="click->modal#closeModal"><i class="far fa-times-circle"></i></div>
+    <div class="modal-custom-content">
+      <%= render 'costumes/display_costume', costume: costume %>
+      <div class="costume-options">
+        <div class="map-container">
+          <% unless policy(costume).edit? %>
+            <div class="show-map">
+              <%= render "costumes/map" ,markers: @markers %>
+            </div>
+          <% end %>
+        </div>
+          <div class="costume-menu">
+            <% if policy(costume).edit? %>
+              <div class="options-wrapper" data-controller="ownerTab">
+                <div class="owner-tabs-wrapper">
+                  <div class="owner-tab" data-ownerTab-target='tab' data-action="click->ownerTab#changeTab" data-tab-page='offers' >See Offers</div>
+                  <div class="owner-tab" data-ownerTab-target='tab' data-action="click->ownerTab#changeTab" data-tab-page='edit' >Edit Costume</div>
+                </div>
+                <div id="offers" data-ownerTab-target="tabPage">
+                  <%= render 'costumes/owner_options', costume: costume %>
+                </div>
+                <div class="hidden" id="edit" data-ownerTab-target="tabPage">
+                  <%= render 'costumes/new_edit', costume: costume %>
+                </div>
+                </div>
+            <% elsif Offer.find { |offer| offer.costume_id == costume.id && offer.user_id == current_user.id } %>
+              <% offer = Offer.find { |offer| offer.costume_id == costume.id && offer.user_id == current_user.id } %>
+              <h3>You have put an offer on this costume !</h3>
+              <%= link_to 'Delete my offer', offer_path(offer.id), method: :delete, data: { confirm: "Are you sure?" } %>
+              <br>
+            <% elsif Offer.find { |offer| offer.costume_id == costume.id && offer.status == "accepted" } %>
+              <p>This costume is not available</p>
+            <% else%>
+              <div class="content-form">
+                <h2>Is it to your tastes?</h2>
+                <p>You can rent it</p>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

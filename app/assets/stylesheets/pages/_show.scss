@@ -1,6 +1,19 @@
 .content-wrapper {
-  display: flex;
   position: relative;
+}
+
+.costume-info {
+  flex: 1 0 60%;
+}
+
+.costume-options {
+  flex: 0 1 40%;
+  height: 100%;
+  width: 100%;
+}
+
+.modal .map-container {
+  flex: none;
 }
 
 .content-info {
