@@ -1,26 +1,33 @@
 <div class="container-offers-card">
   <div class="offers-card">
-    <div class="offers-card-photo">
-    <img src="https://mega-force.fr/wp-content/uploads/2021/05/sonic-costume-1620x800.jpg" alt="game">
+    <div class="avatar">
+      <%= image_tag "https://img.huffingtonpost.com/asset/5ff3371b260000ae2b7a3827.jpeg?cache=AfBaoaRwUB&ops=scalefit_630_noupscale", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     </div>
       <div class="offers-card-info">
-        <h5><%= costume.offer.user.user_name %></h5>
-        <p> From <%= offer.date_of_hire %> to <%= offer.date_of_end %></p>
+        <h5><%= offer.user.username %></h5>
+        <p>From <%= offer.date_of_hire %> to <%= offer.date_of_end %></p>
       </div>
-        <div class="container-price-availibility">
-          <div class="paid-label-container">
-            <div class="free-label-text"><%= costume.price %>€</div>
-          </div>
-          <% if Offer.where( costume_id: costume.id, status: "accepted" ).empty? %>
-            <div class="available-label-container">
-              <div class="available-label-text">available</div>
-            </div>
-          <% else %>
-            <div class="unavailable-label-container">
-              <div class="available-label-text">unavailable</div>
-            </div>
-          <% end %>
+      <div class="container-price-availibility">
+        <div class="paid-label-container">
+          <div class="free-label-text"><%= costume.price * offer.duration %>€</div>
         </div>
+        <% if offer.status == "accepted" %>
+          <div class="available-label-container">
+            <div class="available-label-text">
+              <%= link_to 'accepted',  cancel_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" }, style: 'color: white;' %>
+            </div>
+          </div>
+        <% elsif offer.status == "pending" %>
+          <div class="pending-label-container">
+            <div class="available-label-text">
+              <%= link_to 'pending',  accept_offer_path(offer.id), method: :post, data: { confirm: "Are you sure?" }, style: 'color: white;' %>
+            </div>            
+          </div>
+        <% else %>
+          <div class="unavailable-label-container">
+            <div class="available-label-text">rejected</div>
+          </div>
+        <% end %>
       </div>
   </div>
 </div>
