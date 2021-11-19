@@ -56,7 +56,7 @@ class OffersController < ApplicationController
     end
     authorize @offer
 
-    redirect_to costume_path(@costume)
+    redirect_to dashboard_path
   end
 
   def destroy
@@ -64,7 +64,7 @@ class OffersController < ApplicationController
     @costume = Costume.find(@offer.costume_id)
     @offer.destroy
     authorize @offer
-    redirect_to costume_path(@costume)
+    redirect_to dashboard_path
   end
 
   private
