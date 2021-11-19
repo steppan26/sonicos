@@ -43,7 +43,7 @@ class OffersController < ApplicationController
     @offer.save
     authorize @offer
 
-    redirect_to costume_path(@costume)
+    redirect_to dashboard_path
   end
 
   def cancel
@@ -56,7 +56,7 @@ class OffersController < ApplicationController
     end
     authorize @offer
 
-    redirect_to costume_path(@costume)
+    redirect_to dashboard_path
   end
 
   def destroy
