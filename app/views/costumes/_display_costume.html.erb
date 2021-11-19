@@ -4,16 +4,16 @@
     <div class="row ">
       <% costume.photos.each do |photo| %>
         <div class="col-4 m-2">
-          <%= cl_image_tag photo.key, width: 150, height: 200, crop: :fit %>
+          <%= cl_image_tag photo.key, class: "costume-photos", height: 100, width: 100, crop: :fit %>
         </div>
       <% end %>
     </div>
   </div>
 
-  <div class="show-info">
+  <div class="show-info py-2 my-2">
     <h2><%= costume.title %></h2>
     <p><%= costume.description %></p>
-    <h5><strong>Location: </strong><span><%= costume.location %></span></h5>
+    <h6><strong>Location: </strong><span><%= costume.location %></span></h6>
     <h6><strong>Owner: </strong><%= costume.user.username.capitalize %></h6>
 
     <div class="paid-label-container">
