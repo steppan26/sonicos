@@ -13,11 +13,9 @@
 .carousel-control:hover {
   color: $clr-bakground-secondary;
   opacity: 0.7;
-  width: 300px;
 }
 
 .carousel-photo {
 object-fit: contain;
-width: 50vh;
 height: 50vh;
 }

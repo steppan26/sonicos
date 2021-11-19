@@ -1,4 +1,4 @@
-<h3>Edit your costume</h3>
+<div class="container">
   <%= simple_form_for costume do |f| %>
     <%= f.input :title %>
     <%= f.input :price %>
@@ -7,7 +7,8 @@
     <%= f.input :location %>
     <div ontouchstart="">
       <div class="button-fast">
-        <%= f.submit "Go Faster !", class: "button" %>
+        <%= f.submit "Go Faster !", class: "button resize" %>
       </div>
     </div>
   <% end %>
+</div>
