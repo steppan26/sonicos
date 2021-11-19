@@ -83,7 +83,13 @@ width: 95%;
 
 .costume-info{
   display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
+
 
 .show-info {
   color: black;
